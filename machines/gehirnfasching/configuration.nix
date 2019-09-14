@@ -10,6 +10,7 @@
       ../../modules/basics.nix
       ../../modules/fonts.nix
       ../../modules/i18n.nix
+      ../../modules/networking.nix
       ../../modules/nfs-blackbox.nix
       ../../modules/sway.nix
       ../../modules/syncthing.nix
@@ -29,19 +30,9 @@
 
   networking.hostName = "gehirnfasching"; # Define your hostname.
   networking.hostId = "e45f2a2c";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

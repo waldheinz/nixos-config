@@ -8,10 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/sysadmin.nix
-      ../../modules/syncthing.nix
+      ../../modules/direnv.nix
       ../../modules/fonts.nix
       ../../modules/sway.nix
+      ../../modules/syncthing.nix
+      ../../modules/sysadmin.nix
       ../../modules/zfs.nix
       ../../modules/zsh.nix
     ];

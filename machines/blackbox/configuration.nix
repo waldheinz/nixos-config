@@ -12,6 +12,7 @@
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix
+        ./storage-tank.nix
     ];
 
     # Use the systemd-boot EFI boot loader.

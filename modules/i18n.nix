@@ -7,6 +7,8 @@
     defaultLocale = "de_DE.UTF-8";
   };
 
+  time.timeZone = "Europe/Berlin";
+
   environment.systemPackages = with pkgs; [
     aspell
     aspellDicts.de

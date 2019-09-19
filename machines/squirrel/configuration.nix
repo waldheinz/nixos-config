@@ -26,17 +26,9 @@
   networking.hostName = "squirrel"; # Define your hostname.
   networking.hostId = "33f63802";
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # This value determines the NixOS release with which your system is to be
-  # compatible, in order to avoid breaking some software such as database
-  # servers. You should change this only after NixOS release notes say you
-  # should.
-  system.stateVersion = "19.03"; # Did you read the comment?
+  system.stateVersion = "19.03";
 }

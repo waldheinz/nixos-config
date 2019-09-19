@@ -17,4 +17,6 @@
     # just more sensible
     dbus.socketActivated = true;
   };
+
+  nixpkgs.config.allowUnfree = true;
 }

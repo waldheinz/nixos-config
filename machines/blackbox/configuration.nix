@@ -12,7 +12,8 @@
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix
-	./minecraft.nix
+        ./grafana.nix
+        ./minecraft.nix
         ./node-red.nix
         ./prometheus.nix
         ./storage-tank.nix

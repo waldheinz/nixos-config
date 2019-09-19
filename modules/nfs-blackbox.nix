@@ -3,7 +3,7 @@ let
   bb = what: {
     device = ("blackbox:/mnt/tank/" + what);
     fsType = "nfs";
-    options = [ "proto=udp6" ];
+    options = [ "proto=tcp6" ];
   };
 in {
   fileSystems = {

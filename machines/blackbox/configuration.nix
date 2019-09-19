@@ -13,6 +13,7 @@
         ../../modules/zfs.nix
         ../../modules/zsh.nix
         ./storage-tank.nix
+        ./vpn-server.nix
     ];
 
     # Use the systemd-boot EFI boot loader.

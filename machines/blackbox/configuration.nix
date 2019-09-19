@@ -14,6 +14,7 @@
         ../../modules/zsh.nix
 	./minecraft.nix
         ./node-red.nix
+        ./prometheus.nix
         ./storage-tank.nix
         ./vpn-server.nix
     ];

@@ -67,6 +67,26 @@
       fsType = "zfs";
     };
 
+  fileSystems."/mnt/tank/remote" =
+    { device = "tank/remote";
+      fsType = "zfs";
+    };
+
+  fileSystems."/mnt/tank/remote/kodi-wohnzimmer" =
+    { device = "tank/remote/kodi-wohnzimmer";
+      fsType = "zfs";
+    };
+
+  fileSystems."/mnt/tank/remote/kodi-wohnzimmer/thumbs" =
+    { device = "tank/remote/kodi-wohnzimmer/thumbs";
+      fsType = "zfs";
+    };
+
+  fileSystems."/mnt/tank/remote/kodi-wohnzimmer/backup" =
+    { device = "tank/remote/kodi-wohnzimmer/backup";
+      fsType = "zfs";
+    };
+
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
     /mnt/tank/incoming fd17:0e59:91e6::/48(rw) 192.168.1.0/24(ro)
@@ -75,5 +95,7 @@
     /mnt/tank/media/Serien fd17:0e59:91e6::/48(rw) 192.168.1.0/24(ro)
     /mnt/tank/private/Fotos fd17:0e59:91e6::/48(rw) 192.168.1.0/24(ro)
     /mnt/tank/private/pr0n fd17:0e59:91e6::/48(rw) 192.168.1.0/24(ro)
+    /mnt/tank/remote/kodi-wohnzimmer/backup 192.168.1.0/24(rw)
+    /mnt/tank/remote/kodi-wohnzimmer/thumbs 192.168.1.0/24(rw)
   '';
 }

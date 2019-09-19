@@ -12,6 +12,7 @@
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix
+	./minecraft.nix
         ./node-red.nix
         ./storage-tank.nix
         ./vpn-server.nix

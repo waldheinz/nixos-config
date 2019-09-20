@@ -20,6 +20,16 @@
           }
         ];
       }
+
+      {
+        job_name = "node";
+        static_configs = [
+          {
+            targets = [ "blackbox.lan.waldheinz.de:9100" ];
+          }
+        ];
+      }
+
       {
         job_name = "router";
         static_configs = [

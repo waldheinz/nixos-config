@@ -5,6 +5,7 @@
         /etc/nixos/hardware-configuration.nix
         ../../modules/basics.nix
         ../../modules/i18n.nix
+        ../../modules/monitoring.nix
         ../../modules/networking.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix

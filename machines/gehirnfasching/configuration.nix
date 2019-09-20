@@ -4,6 +4,7 @@
     imports = [
         ./hardware-configuration.nix
         ../../modules/basics.nix
+        ../../modules/desktop.nix
         ../../modules/fonts.nix
         ../../modules/i18n.nix
         ../../modules/networking.nix

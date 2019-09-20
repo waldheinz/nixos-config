@@ -14,6 +14,7 @@
         ../../modules/zsh.nix
         ./grafana.nix
         ./minecraft.nix
+#        ./netatalk.nix
         ./node-red.nix
         ./prometheus.nix
         ./storage-tank.nix

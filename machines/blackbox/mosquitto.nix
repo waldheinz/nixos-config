@@ -10,5 +10,9 @@
       persistent_client_expiration 2m
       set_tcp_nodelay true
     '';
+
+    aclExtraConf = ''
+      topic readwrite #
+    '';
   };
 }

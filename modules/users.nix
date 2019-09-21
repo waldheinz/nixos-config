@@ -13,6 +13,7 @@
       "audio" "video"
       "libvirtd"
       "networkmanager" 
+      "plugdev"
       "sway"
       "systemd-journal"
       "vboxusers" 

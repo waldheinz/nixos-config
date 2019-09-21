@@ -87,6 +87,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/home/trem/tank" =
+    { device = "tank/trem";
+      fsType = "zfs";
+    };
+
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
     /mnt/tank/incoming fd17:0e59:91e6::/48(rw) 192.168.1.0/24(rw)

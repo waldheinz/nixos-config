@@ -47,11 +47,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/tank/private/backups/macbook" =
-    { device = "tank/private/backups/macbook";
-      fsType = "zfs";
-    };
-
   fileSystems."/mnt/tank/private/pr0n" =
     { device = "tank/private/pr0n";
       fsType = "zfs";
@@ -79,6 +74,11 @@
 
   fileSystems."/home/trem/tank" =
     { device = "tank/trem";
+      fsType = "zfs";
+    };
+
+  fileSystems."/mnt/tank/time-machine" =
+    { device = "tank/time_machine";
       fsType = "zfs";
     };
 

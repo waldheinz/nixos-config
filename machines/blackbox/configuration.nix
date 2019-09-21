@@ -16,7 +16,7 @@
         ./grafana.nix
         ./minecraft.nix
         ./mosquitto.nix
-#        ./netatalk.nix
+        ./netatalk.nix
         ./node-red.nix
         ./printing.nix
         ./prometheus.nix

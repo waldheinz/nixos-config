@@ -3,7 +3,7 @@
 { services.syncthing = {
     enable = true;
     user = "trem";
-    dataDir = "/home/trem";
     openDefaultPorts = true;
+    configDir = "/home/trem/.config/syncthing";
   };
 }

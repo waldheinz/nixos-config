@@ -23,6 +23,12 @@
         ./vpn-server.nix
     ];
 
+    # tune syncthing
+    services.syncthing = {
+      dataDir = "/home/trem/tank/sync";
+      guiAddress = "[::]:8384";
+    };
+
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

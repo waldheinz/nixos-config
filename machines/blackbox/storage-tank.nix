@@ -42,11 +42,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/tank/private/Fotos" =
-    { device = "tank/private/Fotos";
-      fsType = "zfs";
-    };
-
   fileSystems."/mnt/tank/private/backups" =
     { device = "tank/private/backups";
       fsType = "zfs";
@@ -59,11 +54,6 @@
 
   fileSystems."/mnt/tank/private/pr0n" =
     { device = "tank/private/pr0n";
-      fsType = "zfs";
-    };
-
-  fileSystems."/mnt/tank/private/sync" =
-    { device = "tank/private/sync";
       fsType = "zfs";
     };
 

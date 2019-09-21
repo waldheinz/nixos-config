@@ -8,7 +8,12 @@
   services.avahi = {
     enable = true;
     nssmdns = true;
-    publish.enable = true;
     ipv6 = true;
+
+    publish = {
+      enable = true;
+      addresses = true;
+      userServices = true;
+    };
   };
 }

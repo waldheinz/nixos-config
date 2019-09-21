@@ -18,6 +18,7 @@
         ./mosquitto.nix
 #        ./netatalk.nix
         ./node-red.nix
+        ./printing.nix
         ./prometheus.nix
         ./storage-tank.nix
         ./vpn-server.nix

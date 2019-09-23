@@ -21,7 +21,6 @@
         ./printing.nix
         ./prometheus.nix
         ./storage-tank.nix
-        ./vpn-server.nix
     ];
 
     # tune syncthing

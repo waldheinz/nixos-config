@@ -3,7 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     git
-    htop 
+    htop
+    mc 
     tmux
     vim_configurable
     yadm

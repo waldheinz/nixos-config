@@ -5,6 +5,7 @@
     git
     htop
     mc 
+    termite.terminfo
     tmux
     vim_configurable
     yadm

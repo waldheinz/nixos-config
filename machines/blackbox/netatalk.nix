@@ -9,6 +9,12 @@
         "valid users" = "trem";
         "time machine" = "yes";
       };
+
+      Fotos = {
+        path = "/home/trem/tank/Fotos";
+        "valid users" = "trem";
+      };
+
       Media = {
         path = "/mnt/tank/media/";
         "valid users" = "trem";

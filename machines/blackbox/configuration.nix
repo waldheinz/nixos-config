@@ -33,8 +33,18 @@
 
     services.transmission.settings = {
       download-dir = "/mnt/tank/incoming/torrents";
+      encryption = 0;
+      port-forwarding-enabled = false;
       rpc-host-whitelist = "blackbox.lan.waldheinz.de";
       rpc-host-whitelist-enabled = true;
+      rpc-whitelist = "127.0.0.1,10.0.0.*";
+      speed-limit-down = 2048;
+      speed-limit-down-enabled = true;
+      speed-limit-up = 256;
+      speed-limit-up-enabled = true;
+      trash-original-torrent-files = true;
+      watch-dir = "/mnt/tank/incoming/torrentdrop";
+      watch-dir-enabled = true;
     };
 
     # Use the systemd-boot EFI boot loader.

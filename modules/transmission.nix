@@ -10,10 +10,5 @@
     };
   };
 
-  services.transmission = {
-    enable = true;
-    settings = {
-      rpc-whitelist = "127.0.0.1,10.0.0.*";
-    };
-  };
+  services.transmission.enable = true;
 }

@@ -4,9 +4,10 @@
   environment.systemPackages = with pkgs; [
     git
     htop
-    mc 
+    mc
     termite.terminfo
     tmux
+    unrar
     vim_configurable
     yadm
   ];

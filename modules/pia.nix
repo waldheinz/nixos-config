@@ -5,8 +5,9 @@ let
 in {
   environment.systemPackages = with pkgs; [
     iproute
-    utillinux
+    iptables
     procps
+    utillinux
   ];
 
   systemd.services.netns-pia = {
@@ -45,7 +46,9 @@ in {
         ${pkgs.iproute}/bin/ip link set vethvpn0 netns ${netns-name}
         ${pkgs.iproute}/bin/ip addr add 10.0.0.1/24 dev vethhost0
         ${pkgs.iproute}/bin/ip link set vethhost0 up
-        # ${pkgs.procps}/bin/sysctl -w net.ipv4.ip_forward=1
+        ${pkgs.procps}/bin/sysctl -w net.ipv4.ip_forward=1
+        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING ! -s 10.0.0.0/24 -p tcp -m tcp -j DNAT --to-destination 10.0.0.2
+        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -d 10.0.0.2/24 -j SNAT --to-source 10.0.0.1
       '';
 
       ExecStart = pkgs.writeScript "netns-pia-access-start" ''

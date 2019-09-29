@@ -31,6 +31,12 @@
       guiAddress = "[::]:8384";
     };
 
+    services.transmission.settings = {
+      download-dir = "/mnt/tank/incoming/torrents";
+      rpc-host-whitelist = "blackbox.lan.waldheinz.de";
+      rpc-host-whitelist-enabled = true;
+    };
+
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

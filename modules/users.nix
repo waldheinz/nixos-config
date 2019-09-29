@@ -6,6 +6,10 @@
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;
 
+  users.groups.torrents = {
+    gid = 1000;
+  };
+
   users.users.trem = {
     description = "Matthias Treydte";
     isNormalUser = true;
@@ -16,7 +20,7 @@
       "plugdev"
       "sway"
       "systemd-journal"
-      "transmission"
+      "torrents"
       "vboxusers"
       "wheel"
     ];

@@ -10,5 +10,8 @@
     };
   };
 
-  services.transmission.enable = true;
+  services.transmission = {
+    enable = true;
+    group = "torrents";
+  };
 }

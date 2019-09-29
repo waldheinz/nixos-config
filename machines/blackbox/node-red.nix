@@ -17,8 +17,9 @@ let
 
 in {
     systemd.services.node-red = {
-        wantedBy = [ "multi-user.target" ]; 
-        after = [ "network.target" ];
+        wantedBy = [ "multi-user.target" ];
+        wants = [ "network-online.target" ];
+        after = [ "network-online.target" ];
         description = "node-red";
         serviceConfig = {
             ExecStart = "${node-red}/bin/node-red";

@@ -4,20 +4,21 @@
   programs.zsh.enable = true;
 
   security.sudo.enable = true;
-  security.sudo.wheelNeedsPassword = false; 
+  security.sudo.wheelNeedsPassword = false;
 
   users.users.trem = {
     description = "Matthias Treydte";
     isNormalUser = true;
-    extraGroups = [ 
+    extraGroups = [
       "audio" "video"
       "libvirtd"
-      "networkmanager" 
+      "networkmanager"
       "plugdev"
       "sway"
       "systemd-journal"
-      "vboxusers" 
-      "wheel" 
+      "transmission"
+      "vboxusers"
+      "wheel"
     ];
     shell = pkgs.zsh;
     uid = 1000;

@@ -22,6 +22,8 @@ in {
 
       ExecStart = pkgs.writeScript "netns-${netns-name}-start" ''
         #!${pkgs.stdenv.shell}
+        set -e
+
         ${pkgs.iproute}/bin/ip netns add ${netns-name}
         ${pkgs.utillinux}/bin/umount /var/run/netns/${netns-name}
         ${pkgs.utillinux}/bin/mount --bind /proc/self/ns/net /var/run/netns/${netns-name}
@@ -42,14 +44,18 @@ in {
 
       ExecStartPre = pkgs.writeScript "netns-${netns-name}-start-pre" ''
         #!${pkgs.stdenv.shell}
+        set -e
+
         ${pkgs.iproute}/bin/ip link add name vethhost0 type veth peer name vethvpn0
         ${pkgs.iproute}/bin/ip link set vethvpn0 netns ${netns-name}
         ${pkgs.iproute}/bin/ip addr add 10.0.0.1/24 dev vethhost0
         ${pkgs.iproute}/bin/ip link set vethhost0 up
         ${pkgs.procps}/bin/sysctl -w net.ipv4.ip_forward=1
-        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING ! -s 10.0.0.0/24 -p tcp -m tcp -j DNAT --to-destination 10.0.0.2
+        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING ! -s 10.0.0.0/24 -p tcp --dport 9091 -m tcp -j DNAT --to-destination 10.0.0.2
         ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -d 10.0.0.2/24 -j SNAT --to-source 10.0.0.1
       '';
+
+      ExecStopPost = "${pkgs.iproute}/bin/ip link del vethhost0";
 
       ExecStart = pkgs.writeScript "netns-pia-access-start" ''
         #!${pkgs.stdenv.shell}

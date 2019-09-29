@@ -7,9 +7,11 @@
         ../../modules/i18n.nix
         ../../modules/monitoring.nix
         ../../modules/networking.nix
+        ../../modules/pia.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
         ../../modules/sysctl.nix
+        ../../modules/transmission.nix
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix

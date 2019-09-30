@@ -5,6 +5,7 @@
     breeze-gtk
     chromium
     digikam
+    fdupes
     ffmpeg
     filelight
     firefox

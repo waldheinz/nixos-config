@@ -1,23 +1,23 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/basics.nix
-      ../../modules/direnv.nix
-      ../../modules/fonts.nix
-      ../../modules/i18n.nix
-      ../../modules/networking.nix
-      ../../modules/sway.nix
-      ../../modules/syncthing.nix
-      ../../modules/sysadmin.nix
-      ../../modules/sysctl.nix
-      ../../modules/users.nix
-      ../../modules/vpn.nix
-      ../../modules/zfs.nix
-      ../../modules/zsh.nix
-    ];
+  imports = [
+    ../../modules/basics.nix
+    ../../modules/direnv.nix
+    ../../modules/fonts.nix
+    ../../modules/i18n.nix
+    ../../modules/networking.nix
+    ../../modules/sway.nix
+    ../../modules/syncthing.nix
+    ../../modules/sysadmin.nix
+    ../../modules/sysctl.nix
+    ../../modules/users.nix
+    ../../modules/vpn.nix
+    ../../modules/zfs.nix
+    ../../modules/zsh.nix
+    ./hardware-configuration.nix
+    ./nfs-blackbox.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

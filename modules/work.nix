@@ -35,5 +35,6 @@ in {
     my-vscode
     nodePackages.typescript
     shellcheck
+    sqlitebrowser
   ];
 }

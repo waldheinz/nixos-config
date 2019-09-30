@@ -13,6 +13,7 @@
     ../../modules/sysctl.nix
     ../../modules/users.nix
     ../../modules/vpn.nix
+    ../../modules/work.nix
     ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix

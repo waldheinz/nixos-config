@@ -11,6 +11,7 @@
     firefox
     hexchat
     kde-gtk-config
+    keepassx2
     mpv
     transmission-remote-gtk
     vlc

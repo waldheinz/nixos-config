@@ -1,10 +1,25 @@
 { config, pkgs, ... }:
-
-{
-  boot = {
-    # extraModulePackages = with config.boot.kernelPackages; [ sysdig ];
-  };
-
+let
+    my-nvim = with pkgs; neovim.override {
+      configure = {
+        customRC = lib.fileContents ./work-nvim-init.vim;
+        packages.myVimPackage = with vimPlugins; {
+          start = [
+            ctrlp-vim
+            nerdtree
+            tsuquyomi
+            typescript-vim
+            vim-airline
+            vim-airline-themes
+            vim-colors-solarized
+            vim-gitgutter
+            vimproc-vim
+          ];
+          opt = [ ];
+        };
+      };
+    };
+in {
   environment.systemPackages = with pkgs; [
     bind # provides `dig`
     binutils
@@ -14,7 +29,6 @@
     file
     git
     gptfdisk
-    gnupg # emacs wants the gpg2 binary?
     htop
     iftop
     iotop
@@ -23,17 +37,13 @@
     lsof
     mosh
     mtr
-    neovim
-    neovim-remote
-    neovim-qt
+    my-nvim
     nftables
     numactl
-    oh-my-zsh
     openssl
     pciutils
     psmisc
     ripgrep
-    # sysdig
     tcpdump
     tmux
     tree

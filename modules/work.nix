@@ -28,32 +28,12 @@ let
         }
       ];
     };
-
-    my-nvim = with pkgs; neovim.override {
-      configure = {
-        customRC = lib.fileContents ./work-nvim-init.vim;
-        packages.myVimPackage = with vimPlugins; {
-          start = [
-            ctrlp-vim
-            nerdtree
-            tsuquyomi
-            typescript-vim
-            vim-airline
-            vim-airline-themes
-            vim-colors-solarized
-            vim-gitgutter
-            vimproc-vim
-          ];
-          opt = [ ];
-        };
-      };
-    };
 in {
   environment.systemPackages = with pkgs; [
     git
     git-lfs
-    my-nvim
     my-vscode
+    nodePackages.typescript
     shellcheck
   ];
 }

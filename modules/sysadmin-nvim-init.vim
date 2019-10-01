@@ -3,10 +3,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 syntax enable
 set background=dark
-" let g:solarized_termcolors=256
-colorscheme solarized
-
-" AirlineTheme solarized
 
 " Spaces & Tabs {{{
 set tabstop=4       " number of visual spaces per TAB

@@ -2,7 +2,7 @@
 let
     my-nvim = with pkgs; neovim.override {
       configure = {
-        customRC = lib.fileContents ./work-nvim-init.vim;
+        customRC = lib.fileContents ./sysadmin-nvim-init.vim;
         packages.myVimPackage = with vimPlugins; {
           start = [
             ctrlp-vim

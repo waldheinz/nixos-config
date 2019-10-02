@@ -38,7 +38,7 @@
       rpc-host-whitelist = "blackbox.lan.waldheinz.de";
       rpc-host-whitelist-enabled = true;
       rpc-whitelist = "127.0.0.1,10.0.0.*";
-      speed-limit-down = 2048;
+      speed-limit-down = 4096;
       speed-limit-down-enabled = true;
       speed-limit-up = 256;
       speed-limit-up-enabled = true;

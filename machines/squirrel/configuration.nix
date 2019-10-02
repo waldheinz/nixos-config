@@ -8,6 +8,7 @@
     ../../modules/fonts.nix
     ../../modules/i18n.nix
     ../../modules/networking.nix
+    ../../modules/razer.nix
     ../../modules/sway.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix

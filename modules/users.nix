@@ -15,6 +15,7 @@
     isNormalUser = true;
     extraGroups = [
       "audio" "video"
+      "dialout"
       "libvirtd"
       "networkmanager"
       "plugdev"

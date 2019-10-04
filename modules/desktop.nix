@@ -9,6 +9,7 @@
     ffmpeg
     filelight
     firefox
+    geeqie
     hexchat
     kde-gtk-config
     keepassx2

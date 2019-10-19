@@ -17,4 +17,10 @@
     transmission-remote-gtk
     vlc
   ];
+
+  services.printing = {
+    enable = true;
+    browsing = true;
+  };
+
 }

@@ -25,6 +25,11 @@
         ./storage-tank.nix
     ];
 
+    networking.bonds.bond0 = {
+      interfaces = [ "enp7s0" "enp8s0" ];
+      driverOptions = { mode = "802.3ad"; };
+    };
+
     # tune syncthing
     services.syncthing = {
       dataDir = "/home/trem/tank/sync";

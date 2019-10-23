@@ -12,7 +12,6 @@
     ../../modules/sway.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
-    ../../modules/sysctl.nix
     ../../modules/users.nix
     ../../modules/vpn.nix
     ../../modules/work.nix

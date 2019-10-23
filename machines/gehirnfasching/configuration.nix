@@ -13,7 +13,6 @@
         ../../modules/sway.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
-        ../../modules/sysctl.nix
         ../../modules/users.nix
         ../../modules/x11.nix
         ../../modules/zfs.nix

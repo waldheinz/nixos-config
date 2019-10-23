@@ -10,7 +10,6 @@
         ../../modules/pia.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
-        ../../modules/sysctl.nix
         ../../modules/transmission.nix
         ../../modules/users.nix
         ../../modules/zfs.nix

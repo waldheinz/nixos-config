@@ -14,6 +14,8 @@
     kde-gtk-config
     keepassx2
     mpv
+    prusa-slicer
+    qmmp
     transmission-remote-gtk
     vlc
   ];

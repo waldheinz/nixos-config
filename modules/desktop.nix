@@ -18,6 +18,8 @@
     vlc
   ];
 
+  boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
+
   services.printing = {
     enable = true;
     browsing = true;

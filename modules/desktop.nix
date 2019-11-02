@@ -22,6 +22,9 @@
 
   boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
 
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
   services.printing = {
     enable = true;
     browsing = true;

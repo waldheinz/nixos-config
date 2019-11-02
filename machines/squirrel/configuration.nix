@@ -28,9 +28,5 @@
   networking.hostName = "squirrel"; # Define your hostname.
   networking.hostId = "33f63802";
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   system.stateVersion = "19.03";
 }

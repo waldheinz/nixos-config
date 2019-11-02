@@ -26,9 +26,5 @@
     networking.hostName = "gehirnfasching"; # Define your hostname.
     networking.hostId = "e45f2a2c";
 
-    # Enable sound.
-    sound.enable = true;
-    hardware.pulseaudio.enable = true;
-
     system.stateVersion = "19.03";
 }

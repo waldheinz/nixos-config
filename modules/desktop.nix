@@ -13,6 +13,7 @@
     hexchat
     kde-gtk-config
     keepassx2
+    minecraft
     mpv
     prusa-slicer
     qmmp

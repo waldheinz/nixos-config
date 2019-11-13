@@ -30,6 +30,7 @@ let
     };
 in {
   environment.systemPackages = with pkgs; [
+    cargo
     gdb
     git
     git-lfs

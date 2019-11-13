@@ -26,6 +26,20 @@ let
           version = "1.2.2";
           sha256 = "1n2yv37ljaadp84iipv7czzs32dbs4q2vmb98l3z0aan5w2g8x3z";
         }
+
+        {
+          publisher = "vigoo";
+          name = "stylish-haskell";
+          version = "0.0.10";
+          sha256 = "1zkvcan7zmgkg3cbzw6qfrs3772i0dwhnywx1cgwhy39g1l62r0q";
+        }
+
+        {
+          publisher = "justusadam";
+          name = "language-haskell";
+          version = "2.6.0";
+          sha256 = "1891pg4x5qkh151pylvn93c4plqw6vgasa4g40jbma5xzq8pygr4";
+        }
       ];
     };
 in {
@@ -34,9 +48,11 @@ in {
     gdb
     git
     git-lfs
+    haskellPackages.stylish-haskell
     my-vscode
     nodePackages.typescript
     shellcheck
     sqlitebrowser
+    stack
   ];
 }

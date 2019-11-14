@@ -15,6 +15,11 @@
         "valid users" = "trem";
       };
 
+      Incoming = {
+        path = "/mnt/tank/incoming";
+        "valid users" = "trem";
+      };
+
       Media = {
         path = "/mnt/tank/media/";
         "valid users" = "trem";

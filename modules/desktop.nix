@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    akonadi
     breeze-gtk
     chromium
     digikam
@@ -13,13 +14,16 @@
     geeqie
     hexchat
     kde-gtk-config
+    kdeApplications.kmail-account-wizard
     keepassx2
+    kmail
     minecraft
     mpv
     prusa-slicer
     qmmp
     transmission-remote-gtk
     vlc
+    youtubeDL
   ];
 
   boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];

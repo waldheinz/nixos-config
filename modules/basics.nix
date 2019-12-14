@@ -19,5 +19,10 @@
     dbus.socketActivated = true;
   };
 
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 60d";
+  };
+
   nixpkgs.config.allowUnfree = true;
 }

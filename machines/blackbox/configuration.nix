@@ -22,6 +22,7 @@
         ./printing.nix
         ./prometheus.nix
         ./storage-tank.nix
+        ./unifi-controller.nix
     ];
 
     networking.bonds.bond0 = {

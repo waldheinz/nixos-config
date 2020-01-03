@@ -3,6 +3,11 @@
 {
   services.netatalk = {
     enable = true;
+    homes = {
+      enable = true;
+      basedirRegex = "/home";
+    };
+
     volumes = {
       Backup = {
         path = "/mnt/tank/time-machine";

@@ -15,10 +15,12 @@
         ../../modules/zfs.nix
         ../../modules/zsh.nix
         ./grafana.nix
+        ./home-assistant.nix
         ./minecraft.nix
         ./mosquitto.nix
         ./netatalk.nix
-        ./node-red.nix
+        ./nginx.nix
+#        ./node-red.nix
         ./printing.nix
         ./prometheus.nix
         ./storage-tank.nix

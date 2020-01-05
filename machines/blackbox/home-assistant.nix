@@ -50,34 +50,50 @@
 
     config = {
 
-    script = {
-      heat_on = {
-        sequence = [ {
-          service = "climate.set_preset_mode";
-          data = { entity_id = "group.climate"; preset_mode = "comfort"; };
-        } ];
-      };
-      heat_off = {
-        sequence = [ { service = "climate.set_preset_mode"; data = { entity_id = "all"; preset_mode = "eco"; }; } ];
-      };
-    };
+      script = {
+        heat_on = {
+          sequence = [ {
+            service = "climate.set_preset_mode";
+            data = { entity_id = "group.climate"; preset_mode = "comfort"; };
+          } ];
+        };
 
-    automation = [ {
-      alias = "Jemand zu Hause";
-      initial_state = true;
-      trigger = { platform = "state"; entity_id = "group.persons"; to = "home"; };
-      action = [ { service = "script.heat_on"; } ];
-    } {
-      alias = "Keiner zu Hause";
-      initial_state = true;
-      trigger = { platform = "state"; entity_id = "group.persons"; to = "not_home"; };
-      action = [ { service = "script.heat_off"; } { service = "light.turn_off"; entity_id = "group.all_lights"; } ];
-    } ];
+        heat_off = {
+          sequence = [ {
+            service = "climate.set_preset_mode";
+            data = { entity_id = "all"; preset_mode = "eco"; };
+          } ];
+        };
 
-    group = {
-      persons = { entities = [ "person.janosch" "person.matthias" ]; };
-      climate = {
-        entities = [
+        lights_night = {
+          sequence = [ {
+            service = "light.turn_on";
+            data = {
+              entity_id = "group.lights_nav";
+              rgb_color = [ 100 0 0 ];
+              brightness_pct = 33;
+              transition = 30;
+            };
+          } ];
+        };
+      };
+
+      automation = [ {
+        alias = "Jemand zu Hause";
+        initial_state = true;
+        trigger = { platform = "state"; entity_id = "group.persons"; to = "home"; };
+        action = [ { service = "script.heat_on"; } ];
+      } {
+        alias = "Keiner zu Hause";
+        initial_state = true;
+        trigger = { platform = "state"; entity_id = "group.persons"; to = "not_home"; };
+        action = [ { service = "script.heat_off"; } { service = "light.turn_off"; entity_id = "group.all_lights"; } ];
+      } ];
+
+      group = {
+        persons = { entities = [ "person.janosch" "person.matthias" ]; };
+
+        climate = { entities = [
           "climate.neq1641889"
           "climate.neq1641890"
           "climate.neq1641958"
@@ -85,9 +101,15 @@
           "climate.neq1641986"
           "climate.neq1641989"
           "climate.neq1641994"
-        ];
+        ]; };
+
+        lights_nav = { entities = [
+          "light.licht_treppe"
+          "light.licht_flur_oben"
+          "light.licht_kuche_unter_schrank"
+          "light.licht_spiegelschrank"
+        ]; };
       };
-    };
 
 
       logger = {
@@ -103,7 +125,7 @@
       homeassistant = {
         name = "zu Hause";
         latitude = 50.821807861328125;
-	longitude = 12.941727797113735;
+	      longitude = 12.941727797113735;
       };
 
       mqtt = {

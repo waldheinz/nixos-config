@@ -31,9 +31,11 @@
               ]; }
             { type = "entities"; title = "Licht"; entities = [
               "light.licht_schreibtisch"
+              "light.wohnzimmer_sofa"
               "light.licht_treppe"
               "light.licht_flur_oben"
               "light.licht_kuche_unter_schrank"
+              "light.schlafzimmer_fussboden"
               "light.licht_spiegelschrank"
               "light.nosch_regal"
               ]; }
@@ -47,7 +49,7 @@
     };
 
     config = {
-    
+
     script = {
       heat_on = {
         sequence = [ {
@@ -56,7 +58,7 @@
         } ];
       };
       heat_off = {
-        sequence = [ { service = "climate.set_preset_mode"; data = { entity_id = "all"; preset_mode = "eco"; }; } ]; 
+        sequence = [ { service = "climate.set_preset_mode"; data = { entity_id = "all"; preset_mode = "eco"; }; } ];
       };
     };
 
@@ -80,12 +82,12 @@
           "climate.neq1641890"
           "climate.neq1641958"
           "climate.neq1641914"
-          "climate.neq1641986"	
+          "climate.neq1641986"
           "climate.neq1641989"
           "climate.neq1641994"
         ];
-      };  
-    };  
+      };
+    };
 
 
       logger = {

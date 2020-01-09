@@ -20,6 +20,7 @@
           title = "Example";
           path = "default_view";
           cards = [
+            { type = "entities"; title = "Szenen"; entities = [ "scene.morgens" "scene.nachts" ]; }
             { type = "entities"; title = "Heizung"; show_header_toggle = false; entities = [
               "climate.neq1641889"
               "climate.neq1641890"
@@ -50,6 +51,42 @@
 
     config = {
 
+      light = [ {
+        platform = "group";
+        name = "Orientierung";
+        entities = [
+          "light.licht_treppe"
+          "light.licht_flur_oben"
+          "light.licht_kuche_unter_schrank"
+          "light.licht_spiegelschrank"
+        ];
+      } ];
+
+      scene = [
+        {
+          name = "Morgens";
+          entities = {
+            "light.orientierung" = {
+              state = "on";
+              rgb_color = [ 60 40 40 ];
+              white_value = 30;
+              brightness_pct = 50;
+              transition = 30;
+            };
+          };
+        } {
+          name = "Nachts";
+          entities = {
+            "light.orientierung" = {
+              state = "on";
+              rgb_color = [ 100 0 0 ];
+              brightness_pct = 40;
+              transition = 30;
+            };
+          };
+        }
+      ];
+
       script = {
         heat_on = {
           sequence = [ {
@@ -62,18 +99,6 @@
           sequence = [ {
             service = "climate.set_preset_mode";
             data = { entity_id = "all"; preset_mode = "eco"; };
-          } ];
-        };
-
-        lights_night = {
-          sequence = [ {
-            service = "light.turn_on";
-            data = {
-              entity_id = "group.lights_nav";
-              rgb_color = [ 100 0 0 ];
-              brightness_pct = 33;
-              transition = 30;
-            };
           } ];
         };
       };
@@ -101,13 +126,6 @@
           "climate.neq1641986"
           "climate.neq1641989"
           "climate.neq1641994"
-        ]; };
-
-        lights_nav = { entities = [
-          "light.licht_treppe"
-          "light.licht_flur_oben"
-          "light.licht_kuche_unter_schrank"
-          "light.licht_spiegelschrank"
         ]; };
       };
 
@@ -147,13 +165,7 @@
         use_x_forwarded_for = true;
         trusted_proxies = "127.0.0.1";
       };
-      config = {
-        scene = [
-          {
-            name = "Romantic";
-          }
-        ];
-      };
+      config = { };
     };
   };
 }

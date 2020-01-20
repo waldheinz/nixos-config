@@ -92,6 +92,9 @@
           sequence = [ {
             service = "climate.set_preset_mode";
             data = { entity_id = "group.climate"; preset_mode = "comfort"; };
+          } {
+            service = "climate.set_hvac_mode";
+            data = { entity_id = "all"; hvac_mode = "auto"; };
           } ];
         };
 
@@ -99,6 +102,9 @@
           sequence = [ {
             service = "climate.set_preset_mode";
             data = { entity_id = "all"; preset_mode = "eco"; };
+          } {
+            service = "climate.set_hvac_mode";
+            data = { entity_id = "all"; hvac_mode = "heat"; };
           } ];
         };
       };

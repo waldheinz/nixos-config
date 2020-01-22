@@ -90,11 +90,11 @@
       script = {
         heat_on = {
           sequence = [ {
+            service = "climate.set_hvac_mode";
+            data = { entity_id = "group.climate"; hvac_mode = "auto"; };
+          } {
             service = "climate.set_preset_mode";
             data = { entity_id = "group.climate"; preset_mode = "comfort"; };
-          } {
-            service = "climate.set_hvac_mode";
-            data = { entity_id = "all"; hvac_mode = "auto"; };
           } ];
         };
 
@@ -111,14 +111,35 @@
 
       automation = [ {
         alias = "Jemand zu Hause";
-        initial_state = true;
         trigger = { platform = "state"; entity_id = "group.persons"; to = "home"; };
         action = [ { service = "script.heat_on"; } ];
       } {
         alias = "Keiner zu Hause";
-        initial_state = true;
         trigger = { platform = "state"; entity_id = "group.persons"; to = "not_home"; };
-        action = [ { service = "script.heat_off"; } { service = "light.turn_off"; entity_id = "group.all_lights"; } ];
+        action = [
+          { service = "script.heat_off"; }
+          { service = "light.turn_off"; entity_id = "group.all_lights"; }
+        ];
+      } {
+        alias = "Nosch kommt";
+        trigger = { platform = "state"; entity_id = "person.janosch"; to = "home"; };
+        action = [ {
+            service = "climate.set_hvac_mode";
+            data = { entity_id = "climate.neq1641958"; hvac_mode = "auto"; };
+          } {
+            service = "climate.set_preset_mode";
+            data = { entity_id = "climate.neq1641958"; preset_mode = "comfort"; };
+          } ];
+      } {
+        alias = "Nosch geht";
+        trigger = { platform = "state"; entity_id = "person.janosch"; to = "not_home"; };
+        action = [ {
+            service = "climate.set_preset_mode";
+            data = { entity_id = "climate.neq164195"; preset_mode = "eco"; };
+          } {
+            service = "climate.set_hvac_mode";
+            data = { entity_id = "climate.neq164195"; hvac_mode = "heat"; };
+          } ];
       } ];
 
       group = {
@@ -127,7 +148,6 @@
         climate = { entities = [
           "climate.neq1641889"
           "climate.neq1641890"
-          "climate.neq1641958"
           "climate.neq1641914"
           "climate.neq1641986"
           "climate.neq1641989"

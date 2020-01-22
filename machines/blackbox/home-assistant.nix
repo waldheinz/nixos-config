@@ -20,7 +20,10 @@
           title = "Example";
           path = "default_view";
           cards = [
-            { type = "entities"; title = "Szenen"; entities = [ "scene.morgens" "scene.nachts" ]; }
+            { type = "entities"; title = "Szenen"; show_header_toggle = false; entities = [
+              "scene.morgens"
+              "scene.nachts"
+              ]; }
             { type = "entities"; title = "Heizung"; show_header_toggle = false; entities = [
               "climate.neq1641889"
               "climate.neq1641890"
@@ -153,17 +156,6 @@
           "climate.neq1641989"
           "climate.neq1641994"
         ]; };
-      };
-
-
-      logger = {
-        default = "info";
-        logs = {
-          aiounifi = "debug";
-          "homeassistant.components.unifi" = "debug";
-          "homeassistant.components.device_tracker.unifi" = "debug";
-          "homeassistant.components.switch.unifi" = "debug";
-        };
       };
 
       homeassistant = {

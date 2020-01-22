@@ -17,7 +17,7 @@
       title = "My Awesome Home";
       views = [
         {
-          title = "Example";
+          title = "Übersicht";
           path = "default_view";
           cards = [
             { type = "entities"; title = "Szenen"; show_header_toggle = false; entities = [
@@ -47,6 +47,18 @@
               "person.janosch"
               "person.matthias"
               ]; }
+          ];
+        } {
+          title = "Einstellungen";
+          cards = [
+            {
+              type = "entities"; title = "Automatisierungen"; secondary_info = "last_triggered"; entities = [
+                "automation.jemand_zu_hause"
+                "automation.keiner_zu_hause"
+                "automation.nosch_kommt"
+                "automation.nosch_geht"
+              ];
+            }
           ];
         }
       ];
@@ -138,10 +150,10 @@
         trigger = { platform = "state"; entity_id = "person.janosch"; to = "not_home"; };
         action = [ {
             service = "climate.set_preset_mode";
-            data = { entity_id = "climate.neq164195"; preset_mode = "eco"; };
+            data = { entity_id = "climate.neq1641958"; preset_mode = "eco"; };
           } {
             service = "climate.set_hvac_mode";
-            data = { entity_id = "climate.neq164195"; hvac_mode = "heat"; };
+            data = { entity_id = "climate.neq1641958"; hvac_mode = "heat"; };
           } ];
       } ];
 

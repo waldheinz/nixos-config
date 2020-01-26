@@ -33,15 +33,19 @@
               "climate.neq1641989"
               "climate.neq1641994"
               ]; }
-            { type = "entities"; title = "Licht"; entities = [
+            { type = "entities"; title = "Licht oben"; entities = [
+              "light.licht_flur_oben"
               "light.licht_schreibtisch"
               "light.wohnzimmer_sofa"
-              "light.licht_treppe"
-              "light.licht_flur_oben"
+              ]; }
+            { type = "entities"; title = "Licht unten"; entities = [
+              "light.flur_hinten"
+              "light.flur_vorn"
               "light.licht_kuche_unter_schrank"
-              "light.schlafzimmer_fussboden"
               "light.licht_spiegelschrank"
+              "light.licht_treppe"
               "light.nosch_regal"
+              "light.schlafzimmer_fussboden"
               ]; }
             { type = "entities"; title = "Wunderbare Menschen"; show_header_toggle = false; entities = [
               "person.janosch"
@@ -70,10 +74,12 @@
         platform = "group";
         name = "Orientierung";
         entities = [
-          "light.licht_treppe"
+          "light.flur_hinten"
           "light.licht_flur_oben"
+          "light.flur_vorn"
           "light.licht_kuche_unter_schrank"
           "light.licht_spiegelschrank"
+          "light.licht_treppe"
         ];
       } ];
 

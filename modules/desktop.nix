@@ -7,10 +7,12 @@
     chromium
     digikam
     dropbox
+    esptool
     fdupes
     ffmpeg
     filelight
     firefox
+    freecad
     geeqie
     hexchat
     kde-gtk-config

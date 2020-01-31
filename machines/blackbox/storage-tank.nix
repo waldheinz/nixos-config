@@ -42,6 +42,7 @@
     /mnt/tank/incoming *(rw,no_subtree_check)
     /mnt/tank/media *(rw,no_subtree_check)
     /mnt/tank/kodi-wohnzimmer *(rw,no_root_squash,no_subtree_check)
+    /home/trem *(rw,no_subtree_check)
   '';
 
 }

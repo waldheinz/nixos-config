@@ -70,6 +70,13 @@
 
     config = {
 
+      logger = {
+        default = "info";
+        logs = {
+          "pyhomematic.devicetypes.generic" = "warning";
+        };
+      };
+
       light = [ {
         platform = "group";
         name = "Orientierung";

@@ -9,16 +9,14 @@
     ../../modules/i18n.nix
     ../../modules/networking.nix
     ../../modules/razer.nix
-    ../../modules/sway.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
     ../../modules/users.nix
-    ../../modules/vpn.nix
     ../../modules/work.nix
+    ../../modules/x11.nix
     ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix
-    ./nfs-blackbox.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

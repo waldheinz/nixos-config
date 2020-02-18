@@ -21,6 +21,7 @@
     kmail
     minecraft
     mpv
+    okular
     prusa-slicer
     qmmp
     transmission-remote-gtk

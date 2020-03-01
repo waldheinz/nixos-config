@@ -16,6 +16,7 @@
     extraGroups = [
       "audio" "video"
       "dialout"
+      "disk"
       "libvirtd"
       "networkmanager"
       "plugdev"

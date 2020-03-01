@@ -4,6 +4,7 @@
     imports = [
         /etc/nixos/hardware-configuration.nix
         ../../modules/basics.nix
+        ../../modules/homebridge.nix
         ../../modules/i18n.nix
         ../../modules/monitoring.nix
         ../../modules/networking.nix
@@ -20,7 +21,6 @@
         ./mosquitto.nix
         ./netatalk.nix
         ./nginx.nix
-#        ./node-red.nix
         ./printing.nix
         ./prometheus.nix
         ./storage-tank.nix

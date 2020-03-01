@@ -13,6 +13,7 @@ let
         paths = [
             nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#v0.4.46"
             nodePackages."homebridge-homematic-git+https://github.com/thkl/homebridge-homematic.git#0.0.219"
+            nodePackages."homebridge-mqttthing-git+https://github.com/arachnetech/homebridge-mqttthing.git#ver_1.0.50"
         ];
     };
 

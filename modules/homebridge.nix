@@ -3,6 +3,7 @@
 let
     homebridge = import ./homebridge { inherit pkgs; };
     dataDir = "/var/lib/homebridge";
+    config = pkgs.writeText "homebridge-config.json" (builtins.toJSON (import ./homebridge-config.nix));
 in {
     environment.systemPackages = [ homebridge ];
 
@@ -12,7 +13,7 @@ in {
         after = [ "network-online.target" ];
         description = "homebridge";
         preStart = ''
-            ln -sf ${./homebridge-config.json} "${dataDir}/config.json"
+            ln -sf ${config} "${dataDir}/config.json"
             ln -sf ${./homebridge-config-homematic.json} "${dataDir}/homematic_config.json"
         '';
         serviceConfig = {

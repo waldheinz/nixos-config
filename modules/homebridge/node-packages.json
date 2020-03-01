@@ -1,0 +1,4 @@
+[
+  { "homebridge" : "git+https://github.com/nfarina/homebridge.git#v0.4.46" },
+  { "homebridge-homematic" : "git+https://github.com/thkl/homebridge-homematic.git#0.0.219" }
+]

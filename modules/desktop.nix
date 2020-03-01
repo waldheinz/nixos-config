@@ -5,6 +5,7 @@
     akonadi
     breeze-gtk
     chromium
+    ddrescue
     digikam
     dropbox
     esptool
@@ -12,8 +13,8 @@
     ffmpeg
     filelight
     firefox
-    freecad
     geeqie
+    handbrake
     hexchat
     kde-gtk-config
     kdeApplications.kmail-account-wizard

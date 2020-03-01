@@ -4,5 +4,6 @@
     "outlets":[ ],
     "doors":[],
     "programs":[],
-    "subsection": "HomeKit"
+    "subsection": "HomeKit",
+    "local_port": 38080
 }

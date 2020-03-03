@@ -181,6 +181,24 @@
           "climate.neq1641989"
           "climate.neq1641994"
         ]; };
+
+        auto_lights = { entities = [
+          "light.flur_hinten"
+          "light.licht_flur_oben"
+          "light.flur_vorn"
+          "light.licht_kuche_unter_schrank"
+          "light.licht_spiegelschrank"
+          "light.licht_treppe"
+        ]; };
+      };
+
+      homekit = {
+        include_domains = [ "light" ];
+      };
+
+      device_sun_light_trigger = {
+        light_group = "group.auto_lights";
+        device_group = "group.all_devices";
       };
 
       homeassistant = {

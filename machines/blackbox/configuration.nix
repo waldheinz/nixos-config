@@ -16,13 +16,13 @@
         ../../modules/zfs.nix
         ../../modules/zsh.nix
         ./grafana.nix
-        ./home-assistant.nix
         ./minecraft.nix
         ./mosquitto.nix
         ./netatalk.nix
         ./nginx.nix
         ./printing.nix
         ./prometheus.nix
+        ./smb.nix
         ./storage-tank.nix
         ./unifi-controller.nix
     ];

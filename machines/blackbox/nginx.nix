@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  security.acme = {
+    email = "mt@waldheinz.de";
+    acceptTerms = true;
+  };
+
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;

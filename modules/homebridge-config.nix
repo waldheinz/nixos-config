@@ -3,7 +3,7 @@ let
         accessory = "mqttthing";
         type = "lightbulb";
         name = desc;
-        url = "http://blackbox.lan.waldheinz.de:1883";
+        url = "mqtt://blackbox.lan.waldheinz.de:1883";
         topics = {
             getRGBW = {
                 topic = name + "/tele/STATE";
@@ -15,12 +15,13 @@ let
                 apply = "return JSON.parse(message).POWER";
             };
             setOn = name + "/cmnd/power";
+            getOnline = name + "/tele/LWT";
         };
-        logMqtt = true;
-        hex = true;
-        hexPrefix = "#";
+        # logMqtt = true;
         onValue = "ON";
         offValue = "OFF";
+        onlineValue = "Online";
+        offlineValue = "Offline";
     };
 in {
     bridge = {
@@ -47,6 +48,7 @@ in {
         (h801 { name = "licht-k-uschrank"; desc = "Küche Boden"; })
         (h801 { name = "licht-nosch-regal"; desc = "Regal"; })
         (h801 { name = "licht-schreibtisch"; desc = "Schreibtisch"; })
+        (h801 { name = "licht-sz-boden"; desc = "Boden"; })
         (h801 { name = "licht-treppe"; desc = "Treppe"; })
         (h801 { name = "licht-wz-sofa"; desc = "Sofa"; })
     ];

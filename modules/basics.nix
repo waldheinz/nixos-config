@@ -23,6 +23,7 @@
     automatic = true;
     options = "--delete-older-than 60d";
   };
-
+  
+  nix.optimise.automatic = true;
   nixpkgs.config.allowUnfree = true;
 }

@@ -10,6 +10,7 @@
         ../../modules/networking.nix
         ../../modules/nfs-blackbox.nix
         ../../modules/razer.nix
+        ../../modules/scripts
         ../../modules/sway.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix

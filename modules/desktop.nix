@@ -25,6 +25,7 @@
     okular
     prusa-slicer
     qmmp
+    tigervnc
     transmission-remote-gtk
     vlc
     youtubeDL

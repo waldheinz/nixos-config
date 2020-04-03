@@ -51,5 +51,9 @@ in {
         (h801 { name = "licht-sz-boden"; desc = "Boden"; })
         (h801 { name = "licht-treppe"; desc = "Treppe"; })
         (h801 { name = "licht-wz-sofa"; desc = "Sofa"; })
+        (h801 { name = "tasmota_318AF2"; desc = "Deko 1"; })
+        (h801 { name = "tasmota_318B66"; desc = "Deko 4"; })
+        (h801 { name = "tasmota_318BB5"; desc = "Deko 3"; })
+        (h801 { name = "tasmota_318F90"; desc = "Deko 2"; })
     ];
 }

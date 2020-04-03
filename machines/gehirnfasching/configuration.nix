@@ -15,6 +15,7 @@
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
         ../../modules/users.nix
+        ../../modules/work.nix
         ../../modules/x11.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix

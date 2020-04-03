@@ -8,7 +8,6 @@
         ../../modules/i18n.nix
         ../../modules/monitoring.nix
         ../../modules/networking.nix
-        ../../modules/pia.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
         ../../modules/transmission.nix
@@ -19,7 +18,6 @@
         ./minecraft.nix
         ./mosquitto.nix
         ./netatalk.nix
-        ./nginx.nix
         ./printing.nix
         ./prometheus.nix
         ./smb.nix
@@ -44,7 +42,7 @@
       port-forwarding-enabled = false;
       rpc-host-whitelist = "blackbox.lan.waldheinz.de";
       rpc-host-whitelist-enabled = true;
-      rpc-whitelist = "127.0.0.1,10.0.0.*";
+      rpc-whitelist = "127.0.0.1,192.168.1.*";
       speed-limit-down = 4096;
       speed-limit-down-enabled = true;
       speed-limit-up = 256;

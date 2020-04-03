@@ -12,16 +12,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/tank/private" =
-    { device = "tank/private";
-      fsType = "zfs";
-    };
-
-  fileSystems."/mnt/tank/private/backups" =
-    { device = "tank/private/backups";
-      fsType = "zfs";
-    };
-
   fileSystems."/home/trem/tank" =
     { device = "tank/trem";
       fsType = "zfs";

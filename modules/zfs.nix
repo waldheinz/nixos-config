@@ -3,14 +3,20 @@
 {
   boot.supportedFilesystems = [ "zfs" ];
 
-  services.zfs.autoScrub = {
-    enable = true;
-    interval = "monthly";
-  };
+  services.zfs = {
+    # Since the automatic TRIM will skip ranges it considers too small
+    # there is value in occasionally running a full `zpool trim`.
+    trim.enable = true;
 
-  services.zfs.autoSnapshot = {
-    enable = true;
-    flags = "-k -p -u";
-    monthly = 6;
+    autoScrub = {
+      enable = true;
+      interval = "monthly";
+    };
+
+    autoSnapshot = {
+      enable = true;
+      flags = "-k -p -u";
+      monthly = 6;
+    };
   };
 }

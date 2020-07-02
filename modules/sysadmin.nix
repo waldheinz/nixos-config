@@ -24,6 +24,7 @@ in {
     bind # provides `dig`
     binutils
     cryptsetup
+    ddrescue
     dmidecode
     dstat
     file

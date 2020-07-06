@@ -61,5 +61,6 @@ in {
     shellcheck
     sqlitebrowser
     stack
+    weston
   ];
 }

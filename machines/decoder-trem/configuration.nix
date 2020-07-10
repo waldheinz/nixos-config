@@ -13,6 +13,7 @@
       ../../modules/networking.nix
       ../../modules/sysadmin.nix      
       ../../modules/users.nix
+      ../../modules/work.nix
       ../../modules/zsh.nix
     ];
 

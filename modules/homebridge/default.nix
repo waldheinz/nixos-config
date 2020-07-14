@@ -6,14 +6,14 @@ let
         inherit (pkgs.stdenv.hostPlatform) system;
     };
 
-    hb = nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#v0.4.46";
+    hb = nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#0.4.53";
 
     runtimeEnv = pkgs.buildEnv {
         name = "homebridge-runtime";
         paths = [
-            nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#v0.4.46"
-            nodePackages."homebridge-homematic-git+https://github.com/thkl/homebridge-homematic.git#0.0.219"
-            nodePackages."homebridge-mqttthing-git+https://github.com/arachnetech/homebridge-mqttthing.git#ver_1.0.50"
+            nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#0.4.53"
+            nodePackages."homebridge-homematic-git+https://github.com/thkl/homebridge-homematic.git#0.1.220"
+            nodePackages."homebridge-mqttthing-git+https://github.com/arachnetech/homebridge-mqttthing.git#ver_1.1.8"
         ];
     };
 

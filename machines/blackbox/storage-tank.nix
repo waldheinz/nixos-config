@@ -12,6 +12,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/mnt/tank/public" =
+    { device = "tank/public";
+      fsType = "zfs";
+    };
+
   fileSystems."/home/trem/tank" =
     { device = "tank/trem";
       fsType = "zfs";
@@ -31,6 +36,7 @@
   services.nfs.server.exports = ''
     /mnt/tank/incoming *(rw,no_subtree_check)
     /mnt/tank/media *(rw,no_subtree_check)
+    /mnt/tank/public *(rw,no_subtree_check)
     /mnt/tank/kodi-wohnzimmer *(rw,no_root_squash,no_subtree_check)
     /home/trem *(rw,no_subtree_check)
   '';

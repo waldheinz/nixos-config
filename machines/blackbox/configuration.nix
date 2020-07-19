@@ -17,7 +17,6 @@
         ./grafana.nix
         ./minecraft.nix
         ./mosquitto.nix
-        ./netatalk.nix
         ./printing.nix
         ./prometheus.nix
         ./smb.nix

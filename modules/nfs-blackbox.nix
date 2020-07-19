@@ -9,6 +9,7 @@ in {
   fileSystems = {
     "/mnt/bb/incoming" = bb "/mnt/tank/incoming";
     "/mnt/bb/media" = bb "/mnt/tank/media";
+    "/mnt/bb/public" = bb "/mnt/tank/public";
     "/mnt/bb/home-trem" = bb "/home/trem";
   };
 }

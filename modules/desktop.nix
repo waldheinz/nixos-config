@@ -6,13 +6,12 @@
     breeze-gtk
     chromium
     ddrescue
-    digikam
-    dropbox
     esptool
     fdupes
     ffmpeg
     filelight
     firefox
+    freecad
     geeqie
     handbrake
     hexchat

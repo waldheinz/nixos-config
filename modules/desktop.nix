@@ -27,6 +27,7 @@
     tigervnc
     transmission-remote-gtk
     vlc
+    wine
     youtubeDL
   ];
 
@@ -34,6 +35,7 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.opengl.driSupport32Bit = true; # for wine
 
   services.printing = {
     enable = true;

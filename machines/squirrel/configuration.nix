@@ -19,6 +19,13 @@
     ./hardware-configuration.nix
   ];
 
+  fileSystems = {
+    "/mnt/bambi" = {
+      device = "bambi.lan.meetwise.de:/";
+      fsType = "nfs";
+    };
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

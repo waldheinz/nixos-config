@@ -35,7 +35,10 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.opengl.driSupport32Bit = true; # for wine
+  hardware.opengl = {
+    driSupport32Bit = true; # for wine
+    extraPackages = with pkgs; [ intel-media-driver vaapiIntel ];
+  };
 
   services.printing = {
     enable = true;

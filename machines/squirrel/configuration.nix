@@ -17,6 +17,7 @@
     ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix
+    ./send-streams.nix
   ];
 
   fileSystems = {

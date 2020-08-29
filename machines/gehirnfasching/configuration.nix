@@ -5,6 +5,7 @@
         ./hardware-configuration.nix
         ../../modules/basics.nix
         ../../modules/desktop.nix
+        ../../modules/direnv.nix
         ../../modules/fonts.nix
         ../../modules/i18n.nix
         ../../modules/networking.nix

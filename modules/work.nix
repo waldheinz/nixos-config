@@ -47,6 +47,13 @@ let
           version = "0.4.2";
           sha256 = "sha256:05da62iahnnjxkgdav14c1gn90lkgyk9gc5rardsqijx2x6dgjn0";
         }
+
+        {
+          publisher = "ms-vscode";
+          name = "cmake-tools";
+          version = "1.4.1";
+          sha256 = "18hj94p3003cba141smirckpsz56cg3fabb8il2mx1xzbqlx2xhk";
+        }
       ];
     };
 in {

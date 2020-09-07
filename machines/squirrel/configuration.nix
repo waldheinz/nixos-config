@@ -7,7 +7,6 @@
     ../../modules/direnv.nix
     ../../modules/fonts.nix
     ../../modules/i18n.nix
-    ../../modules/networking.nix
     ../../modules/razer.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
@@ -17,6 +16,7 @@
     ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix
+    ./networking.nix
     ./send-streams.nix
   ];
 

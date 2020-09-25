@@ -7,6 +7,7 @@
         ../../modules/desktop.nix
         ../../modules/direnv.nix
         ../../modules/fonts.nix
+        ../../modules/hobby.nix
         ../../modules/i18n.nix
         ../../modules/networking.nix
         ../../modules/nfs-blackbox.nix

@@ -2,30 +2,21 @@
 
 {
   environment.systemPackages = with pkgs; [
-    akonadi
     breeze-gtk
     chromium
     ddrescue
-    esptool
     fdupes
     ffmpeg
     filelight
     firefox
-    freecad
     geeqie
-    handbrake
     hexchat
     kde-gtk-config
-    kdeApplications.kmail-account-wizard
     keepassx2
-    kmail
-    minecraft
     mpv
     okular
-    prusa-slicer
     qmmp
     tigervnc
-    transmission-remote-gtk
     vlc
     wine
     youtubeDL

@@ -54,6 +54,13 @@ let
           version = "1.4.1";
           sha256 = "18hj94p3003cba141smirckpsz56cg3fabb8il2mx1xzbqlx2xhk";
         }
+
+        {
+          publisher = "ms-python";
+          name = "python";
+          version = "2020.8.106424";
+          sha256 = "1g1n0k8c8ijfzdi6mqsc79simk6nfp1lrxqbf16hky7q9xqgbdw0";
+        }
       ];
     };
 in {

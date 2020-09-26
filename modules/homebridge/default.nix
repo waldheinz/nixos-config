@@ -2,18 +2,17 @@
 let
     nodePackages = import ./node-packages.nix {
         inherit pkgs;
-        nodejs = pkgs.nodejs;
         inherit (pkgs.stdenv.hostPlatform) system;
     };
 
-    hb = nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#0.4.53";
+    hb = nodePackages."homebridge";
 
     runtimeEnv = pkgs.buildEnv {
         name = "homebridge-runtime";
         paths = [
-            nodePackages."homebridge-git+https://github.com/nfarina/homebridge.git#0.4.53"
-            nodePackages."homebridge-homematic-git+https://github.com/thkl/homebridge-homematic.git#0.1.220"
-            nodePackages."homebridge-mqttthing-git+https://github.com/arachnetech/homebridge-mqttthing.git#ver_1.1.8"
+            hb
+            nodePackages."homebridge-homematic"
+            nodePackages."homebridge-mqttthing"
         ];
     };
 

@@ -19,9 +19,19 @@
     dbus.socketActivated = true;
   };
 
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 30d";
+  nix = {
+    package = pkgs.nixFlakes;
+
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    
+    trustedUsers = [ "root" "@wheel" ];
+
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+    };
   };
   
   nix.optimise.automatic = true;

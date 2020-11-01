@@ -24,6 +24,10 @@
         ./unifi-controller.nix
     ];
 
+    environment.systemPackages = with pkgs; [
+      mosquitto
+    ];
+
     networking.bonds.bond0 = {
       interfaces = [ "enp7s0" "enp8s0" ];
       driverOptions = { mode = "802.3ad"; };

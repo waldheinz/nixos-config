@@ -7,10 +7,10 @@ in {
         wantedBy = [ "multi-user.target" ];
         wants = [ "network-online.target" ];
         after = [ "network-online.target" ];
-        description = "Some Stream";
+        description = "Send Multicast Streams";
         serviceConfig = {
             KillSignal = "SIGINT";
-            Restart = "on-failure";
+            Restart = "always";
             User = "trem";
             WorkingDirectory = "/home/trem/Videos/streams";
             ExecStart = pkgs.writeShellScript "send-mc-streams" ''

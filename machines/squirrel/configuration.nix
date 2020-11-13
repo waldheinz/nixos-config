@@ -7,6 +7,7 @@
     ../../modules/direnv.nix
     ../../modules/fonts.nix
     ../../modules/i18n.nix
+    ../../modules/like-home.nix
     ../../modules/razer.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
@@ -18,6 +19,10 @@
     ./hardware-configuration.nix
     ./networking.nix
     ./send-streams.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    transmission-qt
   ];
 
   fileSystems = {

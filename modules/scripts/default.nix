@@ -1,14 +1,9 @@
 { config, pkgs, lib, ... }:
 
 let
-    x265-hi = pkgs.x265.override {
-        highbitdepthSupport = true;
-    };
-
     ffmpeg = pkgs.ffmpeg-full.override {
         nonfreeLicensing = true;
         fdkaacExtlib = true;
-        x265 = x265-hi;
         fdk_aac = pkgs.fdk_aac;
     };
 

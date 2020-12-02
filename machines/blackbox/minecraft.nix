@@ -14,6 +14,7 @@
       max-players = 5;
       white-list = true;
       motd = "Heute was Grosses!";
+      view-distance = 32;
     };
   };
 }

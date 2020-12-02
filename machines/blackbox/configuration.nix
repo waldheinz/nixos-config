@@ -42,7 +42,9 @@
     services.transmission.settings = {
       download-dir = "/mnt/tank/incoming/torrents";
       encryption = 0;
+      incomplete-dir-enabled = false;
       port-forwarding-enabled = false;
+      rpc-bind-address = "0.0.0.0";
       rpc-host-whitelist = "blackbox.lan.waldheinz.de";
       rpc-host-whitelist-enabled = true;
       rpc-whitelist = "127.0.0.1,192.168.1.*";

@@ -10,6 +10,7 @@
     filelight
     firefox
     geeqie
+    gwenview
     hexchat
     kde-gtk-config
     keepassx2

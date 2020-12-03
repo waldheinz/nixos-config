@@ -3,22 +3,12 @@
 {
   networking = {
     useDHCP = false;
-    dhcpcd.allowInterfaces = [ "enp1s0" ];
+    dhcpcd.allowInterfaces = [ "enp5s0" ];
     
     firewall.enable = false;
     interfaces = {
-      "enp1s0".useDHCP = true;
-      "eno2".useDHCP = false;
-      "tap-mdi" = {
-        virtual = true;
-        virtualOwner = "trem";
-        virtualType = "tap";
-        useDHCP = false;
-      };
-      "br-mdi".useDHCP = false;
+      "enp5s0".useDHCP = true;
     };
-
-    bridges."br-mdi".interfaces = [ "eno2" "tap-mdi" ];
   };
 
   services.avahi = {

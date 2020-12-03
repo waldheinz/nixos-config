@@ -72,6 +72,8 @@ in {
     haskellPackages.stylish-haskell
     my-vscode
     nodePackages.typescript
+    python3Packages.pycodestyle
+    python3Packages.python
     shellcheck
     sqlitebrowser
     stack

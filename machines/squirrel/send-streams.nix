@@ -11,6 +11,7 @@ in {
         serviceConfig = {
             KillSignal = "SIGINT";
             Restart = "always";
+            RestartSec = 30;
             User = "trem";
             WorkingDirectory = "/home/trem/Videos/streams";
             ExecStart = pkgs.writeShellScript "send-mc-streams" ''

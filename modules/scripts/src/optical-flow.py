@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
-import numpy as np
+import concurrent.futures
 import cv2
+import numpy as np
+import os
+import queue
 
 def warp_flow(img_p, img_n, flow):
     h, w = flow.shape[:2]
@@ -39,47 +42,54 @@ if __name__ == '__main__':
         sys.exit(1)
 
     fps = cam.get(cv2.CAP_PROP_FPS) * 2
-    ret, prev = cam.read()
-    prevgray = cv2.cvtColor(prev, cv2.COLOR_BGR2GRAY)
-    prevflow = None
-    h, w = prevgray.shape[:2]
+    w = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
+    h = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
     out = cv2.VideoWriter(out_fn, cv2.VideoWriter_fourcc(*encoding), fps, (w, h), 1)
+    threads = os.cpu_count()
 
-    while True:
-        out.write(prev)
-        ret, img = cam.read()
-        if not ret:
-            break
+    with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as exec:
+        pending = queue.Queue(maxsize=threads - 1)
 
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        def go(prev, curr):
+            flow = cv2.calcOpticalFlowFarneback(
+                prev['gray'],
+                curr['gray'],
+                None,
+                0.5,    # pyr_scale
+                5,      # number of pyramid layers including the initial image
+                32,    # averaging window size; larger values increase the algorithm robustness
+                5,      # number of iterations the algorithm does at each pyramid level
+                7,      # poly_n, size of the pixel neighborhood used to find polynomial expansion
+                1.2,    # poly_sigma, standard deviation of the Gaussian that is used to smooth derivatives
+                cv2.OPTFLOW_FARNEBACK_GAUSSIAN)
 
-        # if prevflow is not None:
-        #     flags = cv2.OPTFLOW_USE_INITIAL_FLOW | cv2.OPTFLOW_FARNEBACK_GAUSSIAN
-        # else:
-        #     flags = cv2.OPTFLOW_FARNEBACK_GAUSSIAN
+            return prev['img'], warp_flow(prev['img'].copy(), curr['img'].copy(), flow)
 
-        flow = cv2.calcOpticalFlowFarneback(
-            prevgray,
-            gray,
-            prevflow,
-            0.5,    # pyr_scale
-            5,      # number of pyramid layers including the initial image
-            256,    # averaging window size; larger values increase the algorithm robustness
-            5,      # number of iterations the algorithm does at each pyramid level
-            7,      # poly_n, size of the pixel neighborhood used to find polynomial expansion
-            1.2,    # poly_sigma, standard deviation of the Gaussian that is used to smooth derivatives
-            cv2.OPTFLOW_FARNEBACK_GAUSSIAN)
+        keep_submitting = True
 
-        warped_img = warp_flow(prev.copy(), img.copy(), flow.copy())
-        cv2.imshow('in', warped_img)
+        def submit_work():
+            ret, img = cam.read()
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            prev = { "gray" : gray, "img" : img}
 
-        out.write(warped_img)
+            while keep_submitting:
+                ret, img = cam.read()
+                if not ret:
+                    break
 
-        prevgray = gray
-        prevflow = flow.copy()
-        prev = img.copy()
+                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                curr = { "gray" : gray, "img" : img}
+                pending.put(exec.submit(go, prev, curr))
+                prev = curr
 
-        ch = 0xFF & cv2.waitKey(1)
-        if ch == 27:
-            break
-    cv2.destroyAllWindows()
+            print("submitter done")
+
+        submitter = exec.submit(submit_work)
+
+        while not (submitter.done() and pending.empty()):
+            try:
+                img1, img2 = pending.get().result()
+                out.write(img1)
+                out.write(img2)
+            except KeyboardInterrupt:
+                keep_submitting = False

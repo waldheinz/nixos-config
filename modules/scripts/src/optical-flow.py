@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
 
+import argparse
 import concurrent.futures
 import cv2
 import numpy as np
 import os
 import queue
+
+parser = argparse.ArgumentParser(description="Optical flow video interpolation.")
+
+parser.add_argument("--layers", type=int, default=5)
+parser.add_argument("--wnd-size", type=int, default=32)
+parser.add_argument("--iterations", type=int, default=5)
+parser.add_argument("--poly-n", type=int, default=7)
+parser.add_argument("input", type=str)
+parser.add_argument("output", type=str)
 
 def warp_flow(img_p, img_n, flow):
     h, w = flow.shape[:2]
@@ -27,28 +37,22 @@ def warp_flow(img_p, img_n, flow):
         0)
 
 if __name__ == '__main__':
-    import sys
-    try:
-        fn = sys.argv[1]
-        out_fn = sys.argv[2]
-    except:
-        print(help_message)
-        sys.exit(1)
+    args = parser.parse_args()
 
     encoding = 'MP4V'
-    cam = cv2.VideoCapture(fn, cv2.CAP_FFMPEG)
+    cam = cv2.VideoCapture(args.input, cv2.CAP_FFMPEG)
     if not cam.isOpened():
-        print('unable to open source: ', fn)
+        print('unable to open source: ', args.input)
         sys.exit(1)
 
     fps = cam.get(cv2.CAP_PROP_FPS) * 2
     w = int(cam.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    out = cv2.VideoWriter(out_fn, cv2.VideoWriter_fourcc(*encoding), fps, (w, h), 1)
+    out = cv2.VideoWriter(args.output, cv2.VideoWriter_fourcc(*encoding), fps, (w, h), 1)
     threads = os.cpu_count()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as exec:
-        pending = queue.Queue(maxsize=threads - 1)
+        pending = queue.Queue(maxsize=threads)
 
         def go(prev, curr):
             flow = cv2.calcOpticalFlowFarneback(
@@ -56,10 +60,10 @@ if __name__ == '__main__':
                 curr['gray'],
                 None,
                 0.5,    # pyr_scale
-                5,      # number of pyramid layers including the initial image
-                32,    # averaging window size; larger values increase the algorithm robustness
-                5,      # number of iterations the algorithm does at each pyramid level
-                7,      # poly_n, size of the pixel neighborhood used to find polynomial expansion
+                args.layers,        # number of pyramid layers including the initial image
+                args.wnd_size,      # averaging window size; larger values increase the algorithm robustness
+                args.iterations,    # number of iterations the algorithm does at each pyramid level
+                args.poly_n,        # poly_n, size of the pixel neighborhood used to find polynomial expansion
                 1.2,    # poly_sigma, standard deviation of the Gaussian that is used to smooth derivatives
                 cv2.OPTFLOW_FARNEBACK_GAUSSIAN)
 
@@ -81,8 +85,6 @@ if __name__ == '__main__':
                 curr = { "gray" : gray, "img" : img}
                 pending.put(exec.submit(go, prev, curr))
                 prev = curr
-
-            print("submitter done")
 
         submitter = exec.submit(submit_work)
 

@@ -1,5 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  hardware.openrazer.enable = true;
+  environment.systemPackages = [ pkgs.razergenie ];
+
+  hardware.openrazer = {
+    enable = true;
+    devicesOffOnScreensaver = false;
+  };
 }

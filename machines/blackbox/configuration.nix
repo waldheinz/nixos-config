@@ -21,6 +21,7 @@
         ./prometheus.nix
         ./smb.nix
         ./storage-tank.nix
+        ./typo3.nix
         ./unifi-controller.nix
     ];
 

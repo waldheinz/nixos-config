@@ -24,4 +24,8 @@
     '';
     listenAddresses = [ "*:631" ];
   };
+
+  services.avahi.extraServiceFiles = {
+    airprint = builtins.readFile ./printing-airprint.xml;
+  };
 }

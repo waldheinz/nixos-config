@@ -5,6 +5,9 @@ let
   dataDir = "/srv/http/${domain}";
   typo-src = pkgs.callPackage ./typo-src.nix { };
 in {
+  security.acme.email = "mt@waldheinz.de";
+  security.acme.acceptTerms = true;
+
   services.phpfpm.pools.${app} = {
     user = app;
 
@@ -27,7 +30,7 @@ in {
 
   systemd.services.typo3-symlink = {
     wantedBy = [ "multi-user.target" ];
-    # before = [ "nginx.service" ];
+    before = [ "nginx.service" ];
     description = "Create TYPO3 Symlinks in ${dataDir}";
     serviceConfig = {
       ExecStart = pkgs.writeShellScript "typo3-symlinks" ''
@@ -37,6 +40,7 @@ in {
         ln -sf "typo3_src/index.php" "./index.php"
       '';
       WorkingDirectory = dataDir;
+      User = "${app}";
     };
   };
 
@@ -44,6 +48,8 @@ in {
     enable = true;
     virtualHosts.${domain} = {
       root = dataDir;
+      forceSSL = true;
+      enableACME = true;
       locations = {
 
         "~ \.php$" = {

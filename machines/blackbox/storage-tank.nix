@@ -41,4 +41,5 @@
     /home/trem *(rw,no_subtree_check)
   '';
 
+  boot.kernelParams = [ "zfs.l2arc_noprefetch=0" ];
 }

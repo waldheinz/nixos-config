@@ -14,7 +14,6 @@
     ../../modules/users.nix
     ../../modules/work.nix
     ../../modules/x11.nix
-    ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix
     ./networking.nix
@@ -35,7 +34,7 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.kernelParams = [ "pcie_aspm=off" ];
-  # Use the systemd-boot EFI boot loader.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

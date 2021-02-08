@@ -23,8 +23,6 @@
     youtubeDL
   ];
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
-
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.opengl = {

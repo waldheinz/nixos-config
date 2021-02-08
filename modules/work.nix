@@ -70,6 +70,7 @@ in {
     git
     git-lfs
     haskellPackages.stylish-haskell
+    jq
     my-vscode
     nodePackages.typescript
     python3Packages.pycodestyle

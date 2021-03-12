@@ -2,24 +2,23 @@
 
 {
   networking = {
-    useDHCP = false;
-    dhcpcd.allowInterfaces = [ "enp5s0" ];
-    
     firewall.enable = false;
-    interfaces = {
-      "enp5s0".useDHCP = true;
+    useDHCP = false;
+    useNetworkd = true;
+  };
+
+  systemd.network = {
+    enable = true;
+
+    networks.ethernet = {
+      matchConfig = { Name = "en*"; };
+      networkConfig = { DHCP = "yes"; MulticastDNS = true; };
     };
   };
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
     ipv6 = true;
-
-    publish = {
-      enable = true;
-      addresses = true;
-      userServices = true;
-    };
+    publish.enable = false;
   };
 }

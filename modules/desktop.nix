@@ -15,6 +15,7 @@
     kde-gtk-config
     keepassx2
     mpv
+    nix-tree
     okular
     qmmp
     tigervnc

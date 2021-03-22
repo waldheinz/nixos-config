@@ -24,13 +24,6 @@
     transmission-qt
   ];
 
-  fileSystems = {
-    "/mnt/bambi" = {
-      device = "bambi.lan.meetwise.de:/";
-      fsType = "nfs";
-    };
-  };
-
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.kernelParams = [ "pcie_aspm=off" ];

@@ -55,6 +55,7 @@ in {
         (h801 { name = "tasmota_318B66"; desc = "Deko 4"; })
         (h801 { name = "tasmota_318BB5"; desc = "Deko 3"; })
         (h801 { name = "tasmota_318BCC"; desc = "Schrank Wohnzimmer"; })
+        (h801 { name = "tasmota_42225E"; desc = "Wand Rechts"; })
         (h801 { name = "tasmota_318F90"; desc = "Deko 2"; })
     ];
 }

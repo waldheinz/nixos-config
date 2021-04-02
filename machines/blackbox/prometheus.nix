@@ -38,6 +38,11 @@
           }
         ];
       }
+    
+      {
+        job_name = "unifi";
+        static_configs = [ { targets = [ "localhost:9130" ]; } ];
+      }
     ];
 
   };

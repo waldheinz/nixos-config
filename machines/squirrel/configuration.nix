@@ -25,6 +25,7 @@
   ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];
+  boot.loader.systemd-boot.memtest86.enable = true;
 
   boot.kernelParams = [ "pcie_aspm=off" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;

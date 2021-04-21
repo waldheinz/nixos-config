@@ -17,6 +17,7 @@
     ../../modules/zsh.nix
     ./hardware-configuration.nix
     ./networking.nix
+    ./node-exporter.nix
     ./send-streams.nix
   ];
 

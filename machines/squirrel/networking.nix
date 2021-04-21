@@ -5,6 +5,18 @@
     firewall.enable = false;
     useDHCP = false;
     useNetworkd = true;
+
+    wireguard = {
+      enable = true;
+      interfaces.wg_wld = {
+        ips = [ "fd17:0e59:91e6:1::3/64" ];
+        privateKeyFile = "/etc/waldnet-priv.key";
+        peers = [ {
+          allowedIPs = [ "fd17:0e59:91e6::/48" ];
+          persistentKeepalive = 25;
+          endpoint = "waldnet.chickenkiller.com:53914"; publicKey = "CDRtNHufsnS1nHt+wxILtmsYusZKokLgvjnyQuxj0zE="; } ];
+      };
+    };
   };
 
   systemd.network = {

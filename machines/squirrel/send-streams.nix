@@ -13,7 +13,7 @@ in {
             Restart = "always";
             RestartSec = 30;
             User = "trem";
-            WorkingDirectory = "/home/trem/Videos/streams";
+            WorkingDirectory = "/home/trem/Krimskrams/Musikvideos";
             ExecStart = pkgs.writeShellScript "send-mc-streams" ''
                 counter=0
 

@@ -15,8 +15,6 @@
   services = {
     # we always want to be able to ssh in
     openssh.enable = true;
-    # just more sensible
-    dbus.socketActivated = true;
   };
 
   nix = {
@@ -25,7 +23,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    
+
     trustedUsers = [ "root" "@wheel" ];
 
     gc = {
@@ -33,7 +31,7 @@
       options = "--delete-older-than 30d";
     };
   };
-  
+
   nix.optimise.automatic = true;
   nixpkgs.config.allowUnfree = true;
 }

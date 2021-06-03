@@ -9,22 +9,22 @@ let
         {
           publisher = "waderyan";
           name = "gitblame";
-          version = "4.0.0";
-          sha256 = "sha256:1kqbdikz98vy9z14ms1gqw9zws98phrhjdf0is3dwpbigwlcmmdi";
+          version = "7.0.6";
+          sha256 = "sha256-Qs6aiX9VqZNNKT/UebKRdBO7hCR2urBDOOyx2wA/trQ=";
         }
 
         {
           publisher = "timonwong";
           name = "shellcheck";
-          version = "0.9.0";
-          sha256 = "129495np1kgy3d35c7lz6g43hgv9jpkicbj0nrillcb56gs74h8c";
+          version = "0.14.1";
+          sha256 = "sha256-X3ihMxANcqNLWl9oTZjCgwRt1uBsSN2BmC2D4dPRFLE=";
         }
 
         {
           publisher = "ms-vscode";
           name = "vscode-typescript-tslint-plugin";
-          version = "1.2.3";
-          sha256 = "0dv80n120sfs77rxfm8i0w1i0hrh79w5f39rvmhc6xi9ik548vgg";
+          version = "1.3.3";
+          sha256 = "sha256-ISELYPs/b22TAXWldmm0omCmBp5NfhiwRz3d0iu7WvY=";
         }
 
         {
@@ -37,29 +37,22 @@ let
         {
           publisher = "justusadam";
           name = "language-haskell";
-          version = "3.0.3";
-          sha256 = "1sg4g8h1gww4y67zix5f33v2gf121k2fcm6l1m7lygpkn40a8dsj";
+          version = "3.4.0";
+          sha256 = "sha256-/pidWbyT+hgH7GslVAYK1u5RJmMSvMqj6nKq/mWpZyk=";
         }
 
         {
           publisher = "zxh404";
           name = "vscode-proto3";
-          version = "0.4.2";
-          sha256 = "sha256:05da62iahnnjxkgdav14c1gn90lkgyk9gc5rardsqijx2x6dgjn0";
-        }
-
-        {
-          publisher = "ms-vscode";
-          name = "cmake-tools";
-          version = "1.4.1";
-          sha256 = "18hj94p3003cba141smirckpsz56cg3fabb8il2mx1xzbqlx2xhk";
+          version = "0.5.4";
+          sha256 = "sha256-S89qRRlfiTsJ+fJuwdNkZywe6mei48KxIEWbGWChriE=";
         }
 
         {
           publisher = "ms-python";
           name = "python";
-          version = "2020.8.106424";
-          sha256 = "1g1n0k8c8ijfzdi6mqsc79simk6nfp1lrxqbf16hky7q9xqgbdw0";
+          version = "2021.5.842923320";
+          sha256 = "sha256-WYio9Mc0SeJIQNlO8ua059WgwLBrvNTOwy3ZklJVeaA=";
         }
       ];
     };

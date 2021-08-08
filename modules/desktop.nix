@@ -12,6 +12,7 @@
     geeqie
     gwenview
     hexchat
+    kate
     kde-gtk-config
     keepassx2
     mpv

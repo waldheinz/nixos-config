@@ -4,7 +4,6 @@
     services.samba = {
         enable = true;
         package = pkgs.sambaFull;
-        syncPasswordsByPam = true;
 
         extraConfig = ''
             mdns name = mdns

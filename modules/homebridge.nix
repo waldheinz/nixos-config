@@ -29,5 +29,6 @@ in {
         description = "Homebridge service user";
         home = dataDir;
         createHome = true;
+        isSystemUser = true;
     };
 }

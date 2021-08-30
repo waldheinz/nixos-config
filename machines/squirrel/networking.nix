@@ -19,6 +19,8 @@
     };
   };
 
+  services.resolved.dnssec = "false";
+
   systemd.network = {
     enable = true;
 

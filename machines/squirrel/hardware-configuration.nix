@@ -29,7 +29,10 @@
     };
 
   swapDevices = [ ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
+  hardware = {
+    cpu.amd.updateMicrocode = true;
+    video.hidpi.enable = lib.mkDefault true;  # high-resolution display
+  };
 }

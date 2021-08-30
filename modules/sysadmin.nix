@@ -53,4 +53,8 @@ in {
     which
     wireshark
   ];
+
+  programs.wireshark = {
+    enable = true;
+  };
 }

@@ -25,6 +25,7 @@
       "torrents"
       "vboxusers"
       "wheel"
+      "wireshark"
     ];
     shell = pkgs.zsh;
     uid = 1000;

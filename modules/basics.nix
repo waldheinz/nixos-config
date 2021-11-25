@@ -33,5 +33,13 @@
   };
 
   nix.optimise.automatic = true;
-  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (self: super:
+        (import ../pkgs/default.nix { pkgs = super; })
+      )
+    ];
+  };
 }

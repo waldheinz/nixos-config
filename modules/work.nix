@@ -64,7 +64,8 @@ in {
     git-lfs
     haskellPackages.stylish-haskell
     jq
-    my-vscode
+    # my-vscode
+    vscode-fhs
     nodePackages.typescript
     python3Packages.pycodestyle
     python3Packages.python

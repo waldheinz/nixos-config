@@ -7,6 +7,7 @@
     ../../modules/users.nix
     ../../modules/zsh.nix
     ./grafana.nix
+    ./network.nix
     ./nginx.nix
     ./prometheus
     ./unifi.nix

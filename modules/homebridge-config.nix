@@ -5,11 +5,11 @@ let
         name = desc;
         url = "mqtt://blackbox.lan.waldheinz.de:1883";
         topics = {
-            getRGBW = {
+            getHSV = {
                 topic = name + "/tele/STATE";
-                apply = "return JSON.parse(message).Color";
+                apply = "return JSON.parse(message).HSBColor";
             };
-            setRGBW = name + "/cmnd/color";
+            setHSV = name + "/cmnd/hsbcolor";
             getOn = {
                 topic = name + "/tele/STATE";
                 apply = "return JSON.parse(message).POWER";
@@ -59,3 +59,14 @@ in {
         (h801 { name = "tasmota_318F90"; desc = "Deko 2"; })
     ];
 }
+
+
+# disable auto power on:
+#   SetOption20 1
+#
+# white blend mode
+#   SetOption105 1
+#   RGBWWTable 255,255,255,150,0
+#
+# disable flash write
+#   Savedata 0

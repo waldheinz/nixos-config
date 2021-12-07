@@ -10,6 +10,7 @@
     ./network.nix
     ./nginx.nix
     ./prometheus
+    ./syncthing.nix
     ./transmission.nix
     ./unifi.nix
   ];

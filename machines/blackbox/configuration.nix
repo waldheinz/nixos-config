@@ -8,7 +8,6 @@
         ../../modules/i18n.nix
         ../../modules/monitoring.nix
         ../../modules/networking.nix
-        ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
         ../../modules/users.nix
         ../../modules/zfs.nix
@@ -28,12 +27,6 @@
     networking.bonds.bond0 = {
       interfaces = [ "enp7s0" "enp8s0" ];
       driverOptions = { mode = "802.3ad"; };
-    };
-
-    # tune syncthing
-    services.syncthing = {
-      dataDir = "/home/trem/tank/sync";
-      guiAddress = "[::]:8384";
     };
 
     services.transmission.settings = {

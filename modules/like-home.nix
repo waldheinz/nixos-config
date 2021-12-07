@@ -2,6 +2,7 @@
 
 {
   networking.hosts = {
+    "fd17:e59:91e6:0:e65f:1ff:fe4c:9961" = [ "homepi.lan.waldheinz.de" ];
     "fd17:e59:91e6:0:ece5:11ff:fe66:a953" = [ "blackbox.lan.waldheinz.de" ];
   };
 

@@ -27,17 +27,11 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/tank/kodi-wohnzimmer" =
-    { device = "tank/kodi-wohnzimmer";
-      fsType = "zfs";
-    };
-
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
     /mnt/tank/incoming *(rw,no_subtree_check)
     /mnt/tank/media *(rw,no_subtree_check)
     /mnt/tank/public *(rw,no_subtree_check)
-    /mnt/tank/kodi-wohnzimmer *(rw,no_root_squash,no_subtree_check)
     /home/trem *(rw,no_subtree_check)
   '';
 

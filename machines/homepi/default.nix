@@ -9,6 +9,7 @@
     ./grafana.nix
     ./nginx.nix
     ./prometheus
+    ./unifi.nix
   ];
 
   boot.loader.grub.enable = false;

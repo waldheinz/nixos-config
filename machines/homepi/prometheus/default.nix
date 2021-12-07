@@ -11,7 +11,7 @@
 
     globalConfig = {
       scrape_interval = "1m";
-      scrape_timeout = "10s";
+      scrape_timeout = "30s";
     };
 
     scrapeConfigs = [
@@ -32,6 +32,12 @@
         job_name = "router";
         static_configs = [ { targets = [ "klaus.lan.waldheinz.de:9100" ]; } ];
       }
+
+      {
+        job_name = "unifi";
+        static_configs = [ { targets = [ "localhost:9130" ]; } ];
+      }
+
     ];
   };
 

@@ -14,15 +14,12 @@
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix
-        ./grafana.nix
         ./minecraft.nix
         ./mosquitto.nix
         ./printing.nix
-        ./prometheus.nix
         ./smb.nix
         ./storage-tank.nix
         ./typo3.nix
-        ./unifi-controller.nix
     ];
 
     environment.systemPackages = with pkgs; [

@@ -10,7 +10,6 @@
         ../../modules/networking.nix
         ../../modules/syncthing.nix
         ../../modules/sysadmin.nix
-        ../../modules/transmission.nix
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix

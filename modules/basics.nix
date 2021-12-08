@@ -7,8 +7,8 @@
   ];
 
   services = {
-    # we always want to be able to ssh in
-    openssh.enable = true;
+    openssh.enable = true;  # we always want to be able to ssh in
+    fstrim.enable = true;  # it's easy to miss and does not hurt when not really needed
   };
 
   nix = {

@@ -4,12 +4,6 @@
   environment.systemPackages = with pkgs; [
     git
     htop
-    mc
-    termite.terminfo
-    tmux
-    unrar
-    vim_configurable
-    yadm
   ];
 
   services = {

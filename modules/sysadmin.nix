@@ -21,33 +21,19 @@ let
     };
 in {
   environment.systemPackages = with pkgs; [
-    bind # provides `dig`
     binutils
-    cryptsetup
-    ddrescue
-    dmidecode
-    dstat
     file
-    git
-    gptfdisk
-    htop
     iftop
     iotop
-    linuxPackages.perf
-    lshw
     lsof
-    mosh
+    mc
     mtr
     my-nvim
-    nftables
-    numactl
     openssl
     pciutils
     psmisc
-    ripgrep
     tcpdump
-    tmux
-    tree
+    unrar
     unzip
     wget
     which

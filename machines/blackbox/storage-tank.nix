@@ -36,4 +36,27 @@
   '';
 
   boot.kernelParams = [ "zfs.l2arc_noprefetch=0" ];
+
+  environment.systemPackages = with pkgs; [ hdparm smartmontools ];
+
+  systemd.services.prometheus-node-exporter-smart = {
+      wantedBy = [ "prometheus-node-exporter.service" ];
+      description = "Provide SMART data to Prometheus node exporter";
+
+      serviceConfig = {
+        ExecStart = pkgs.writeShellScript "update-prometheus-node-smart" ''
+          set -e
+
+          while true
+          do
+            ${pkgs.node-exporter-textfile-collector-scripts}/bin/smartmon.sh \
+              | ${pkgs.moreutils}/bin/sponge ${config.local.node-exporter-textfiles}/smartmon.prom
+            sleep 120
+          done
+        '';
+
+        Restart = "always";
+      };
+  };
+
 }

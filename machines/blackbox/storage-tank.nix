@@ -40,23 +40,24 @@
   environment.systemPackages = with pkgs; [ hdparm smartmontools ];
 
   systemd.services.prometheus-node-exporter-smart = {
-      wantedBy = [ "prometheus-node-exporter.service" ];
-      description = "Provide SMART data to Prometheus node exporter";
+    description = "Provide SMART data to Prometheus node exporter";
 
-      serviceConfig = {
-        ExecStart = pkgs.writeShellScript "update-prometheus-node-smart" ''
-          set -e
+    serviceConfig = {
+      ExecStart = pkgs.writeShellScript "update-prometheus-node-smart" ''
+        set -euo pipefail
 
-          while true
-          do
-            ${pkgs.node-exporter-textfile-collector-scripts}/bin/smartmon.sh \
-              | ${pkgs.moreutils}/bin/sponge ${config.local.node-exporter-textfiles}/smartmon.prom
-            sleep 120
-          done
-        '';
+        ${pkgs.node-exporter-textfile-collector-scripts}/bin/smartmon.sh \
+          | ${pkgs.moreutils}/bin/sponge ${config.local.node-exporter-textfiles}/smartmon.prom
+      '';
+    };
+  };
 
-        Restart = "always";
-      };
+  systemd.timers.prometheus-node-exporter-smart = {
+    wantedBy = [ "prometheus-node-exporter.service" ];
+    timerConfig = {
+      OnBootSec = "1min";
+      OnUnitActiveSec = "1h10m";
+    };
   };
 
 }

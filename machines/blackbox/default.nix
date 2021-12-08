@@ -2,7 +2,6 @@
 
 {
     imports = [
-        /etc/nixos/hardware-configuration.nix
         ../../modules/basics.nix
         ../../modules/homebridge.nix
         ../../modules/i18n.nix
@@ -12,6 +11,7 @@
         ../../modules/users.nix
         ../../modules/zfs.nix
         ../../modules/zsh.nix
+        ./hardware-configuration.nix
         ./minecraft.nix
         ./mosquitto.nix
         ./printing.nix

@@ -25,10 +25,13 @@ in {
         };
     };
 
+    users.groups.homebridge = {};
+
     users.users.homebridge = {
-        description = "Homebridge service user";
-        home = dataDir;
         createHome = true;
+        description = "Homebridge service user";
+        group = "homebridge";
+        home = dataDir;
         isSystemUser = true;
     };
 }

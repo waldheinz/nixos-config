@@ -4,6 +4,7 @@
   imports = [
     ../../modules/basics.nix
     ../../modules/i18n.nix
+    ../../modules/syslog-receiver.nix
     ../../modules/users.nix
     ../../modules/zsh.nix
     ./grafana.nix

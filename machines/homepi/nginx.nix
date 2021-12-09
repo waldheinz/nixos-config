@@ -15,7 +15,7 @@
         "/grafana/" = { proxyPass = "http://127.0.0.1:3000/"; proxyWebsockets = true; };
         "/prometheus" = { proxyPass = "http://localhost:9090/prometheus"; };
         "/syncthing/" = { proxyPass = "http://${config.services.syncthing.guiAddress}/"; };
-        "/transmission" = {  proxyPass = "http://localhost:${toString config.services.transmission.settings.rpc-port}"; };
+        "/transmission" = {  proxyPass = "http://127.0.0.1:${toString config.services.transmission.settings.rpc-port}"; };
       };
     };
   };

@@ -11,6 +11,11 @@
     virtualHosts."${config.networking.hostName}.lan.meetwise.de" = {
       root = builtins.path { path = ./www-root; };
 
+      extraConfig = ''
+        access_log off;
+        error_log stderr;
+      '';
+
       locations = {
         "/grafana/" = { proxyPass = "http://127.0.0.1:3000/"; proxyWebsockets = true; };
         "/prometheus" = { proxyPass = "http://localhost:9090/prometheus"; };

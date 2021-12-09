@@ -32,6 +32,7 @@ in {
     openssl
     pciutils
     psmisc
+    sshfs-fuse
     tcpdump
     unrar
     unzip

@@ -6,6 +6,7 @@
     ../../modules/i18n.nix
     ../../modules/syslog-receiver.nix
     ../../modules/users.nix
+    ../../modules/zfs.nix
     ../../modules/zsh.nix
     ./grafana.nix
     ./network.nix
@@ -18,24 +19,14 @@
 
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "zfs" ];
+  networking.hostId = "5a882096";
 
   fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-    };
-
-    "/mnt/intenso" = {
-      device = "/dev/disk/by-uuid/0c119dab-75bf-4eac-bb6c-53338d5a7f91";
-      fsType = "ext4";
-    };
-
-    "/var/lib/prometheus2" = {
-      device = "/mnt/intenso/var/prometheus";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+    "/" = { fsType = "ext4"; device = "/dev/disk/by-label/NIXOS_SD"; };
+    "/mnt/incoming" = { fsType = "zfs"; device = "lacie/incoming"; };
+    "/var/lib/prometheus2" = { fsType = "zfs"; device = "lacie/prometheus"; };
+    "/var/lib/syncthing" = { fsType = "zfs"; device = "lacie/syncthing"; };
   };
 
   networking.hostName = "homepi";

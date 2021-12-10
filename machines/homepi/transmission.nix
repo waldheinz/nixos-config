@@ -6,7 +6,7 @@
     group = "torrents";
     openPeerPorts = true;
     settings = {
-      download-dir = "/mnt/intenso/var/transmission";
+      download-dir = "/mnt/incoming";
       incomplete-dir-enabled = false;
       peer-port-random-high = 65500;
       peer-port-random-low = 65300;

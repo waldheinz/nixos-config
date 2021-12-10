@@ -2,9 +2,9 @@
 
 {
   services.syncthing = rec {
-    configDir = "${dataDir}/.config";
-    dataDir = "/mnt/intenso/var/syncthing";
+    configDir = "${config.services.syncthing.dataDir}/.config";
     enable = true;
+    group = "torrents";
     openDefaultPorts = true;
   };
 }

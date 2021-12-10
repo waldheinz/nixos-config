@@ -21,6 +21,7 @@
           url = "http://homepi.lan.waldheinz.de/prometheus";
           access = "direct";
           isDefault = true;
+          jsonData.timeInterval = config.services.prometheus.globalConfig.scrape_interval;
         }
       ];
     };

@@ -9,38 +9,21 @@ let
       extraPackages = ps: with ps; [
 				aiounifi
         colorlog
+        hatasmota
         PyChromecast
         zeroconf
       ];
     };
 
+  ha-config = import ./config.nix { };
+
 in {
 	systemd.services.home-assistant.path = [ pkgs.ffmpeg ];
 
 	services.home-assistant = {
+		config = ha-config;
 		enable = true;
 		package = ha-with-extra;
-
-		config = {
-			logger = {
-        default = "info";
-        logs = {
-          "homeassistant.components.homekit" = "debug";
-        };
-      };
-
-			frontend = { };
-
-      homekit = {
-        filter = { include_domains = [ "binary_sensor" ]; };
-      };
-
-			http = {
-        use_x_forwarded_for = true;
-        trusted_proxies = "127.0.0.1";
-      };
-
-			zha = { };
-		};
+    openFirewall = true;
 	};
 }

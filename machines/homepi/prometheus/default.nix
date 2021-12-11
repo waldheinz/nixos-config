@@ -24,6 +24,13 @@
       }
 
       {
+        job_name = "hass";
+        metrics_path = "/api/prometheus";
+        bearer_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzOGNhM2NlNGYyNWQ0ZjYyYTQwOWEwMTFlZWY3MGVmOCIsImlhdCI6MTYzOTI1MzgyMCwiZXhwIjoxOTU0NjEzODIwfQ.w0BV2kT-Ar2H1QuisO8KM8XPYIwZxos5hYBAhQs2xQ8";
+        static_configs = [ { targets = [ "localhost:8123" ]; } ];
+      }
+
+      {
         job_name = "homematic";
         metrics_path = "/addons/webmatic/cgi/prometheus.cgi";
         static_configs = [ { targets = [ "ccu.lan.waldheinz.de:80" ]; } ];

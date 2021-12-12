@@ -24,6 +24,5 @@ in {
 		config = ha-config;
 		enable = true;
 		package = ha-with-extra;
-    openFirewall = true;
 	};
 }

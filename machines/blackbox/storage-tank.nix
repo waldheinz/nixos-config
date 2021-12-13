@@ -17,11 +17,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/home/trem/tank" =
-    { device = "tank/trem";
-      fsType = "zfs";
-    };
-
   fileSystems."/mnt/tank/time-machine" =
     { device = "tank/time_machine";
       fsType = "zfs";

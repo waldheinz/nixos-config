@@ -1,4 +1,4 @@
-{ }:
+{ configDir }:
 
 {
   frontend = { };
@@ -32,5 +32,11 @@
   prometheus = { };
   scene = "!include scenes.yaml";
   tasmota = { };
-  zha = { };
+
+  zha = {
+    zigpy_config.ota = {
+      ikea_provider = true;
+      otau_directory = "${configDir}/zigpy_ota/";
+    };
+  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
 	ha-no-test = pkgs.home-assistant.overrideAttrs (oldAttrs: {
@@ -15,7 +15,7 @@ let
       ];
     };
 
-  ha-config = import ./config.nix { };
+  ha-config = import ./config.nix { configDir = config.services.home-assistant.configDir; };
 
 in {
 	systemd.services.home-assistant.path = [ pkgs.ffmpeg ];

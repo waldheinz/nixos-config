@@ -31,12 +31,6 @@
       }
 
       {
-        job_name = "homematic";
-        metrics_path = "/addons/webmatic/cgi/prometheus.cgi";
-        static_configs = [ { targets = [ "ccu.lan.waldheinz.de:80" ]; } ];
-      }
-
-      {
         job_name = "router";
         static_configs = [ { targets = [ "klaus.lan.waldheinz.de:9100" ]; } ];
       }

@@ -26,6 +26,7 @@ in {
     iftop
     iotop
     lsof
+    lz4
     mc
     mtr
     my-nvim

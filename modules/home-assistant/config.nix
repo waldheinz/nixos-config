@@ -7,10 +7,11 @@
     filter = { include_domains = [
       "automation"
       "binary_sensor"
+      "climate"
       "light"
+      "scene"
       "sensor"
       "switch"
-      "scene"
     ]; };
   };
 

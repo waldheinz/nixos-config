@@ -31,6 +31,7 @@
     "/var/lib/hass" = { fsType = "zfs"; device = "lacie/hass"; };
     "/var/lib/prometheus2" = { fsType = "zfs"; device = "lacie/prometheus"; };
     "/var/lib/syncthing" = { fsType = "zfs"; device = "lacie/syncthing"; };
+    "/var/lib/unifi/data" = { fsType = "zfs"; device = "lacie/unifi-data"; };
   };
 
   networking.hostName = "homepi";

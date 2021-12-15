@@ -17,11 +17,6 @@
       fsType = "zfs";
     };
 
-  fileSystems."/mnt/tank/time-machine" =
-    { device = "tank/time_machine";
-      fsType = "zfs";
-    };
-
   services.nfs.server.enable = true;
   services.nfs.server.exports = ''
     /mnt/tank/incoming *(rw,no_subtree_check)

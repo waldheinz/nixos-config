@@ -1,6 +1,16 @@
 { configDir }:
 
-{
+let
+  thermostats = [
+    { suffix = "bathroom"; ieee = "84:fd:27:ff:fe:d5:a1:ab"; }
+    { suffix = "bedroom"; ieee = "84:fd:27:ff:fe:d4:33:5f"; }
+    { suffix = "child_room"; ieee = "84:fd:27:ff:fe:d4:33:57"; }
+    { suffix = "kitchen"; ieee = "84:fd:27:ff:fe:d4:31:e0"; }
+    { suffix = "living_room_1"; ieee = "84:fd:27:ff:fe:d4:31:d9"; }
+    { suffix = "living_room_2"; ieee = "84:fd:27:ff:fe:d4:31:7b"; }
+    { suffix = "workroom"; ieee = "84:fd:27:ff:fe:d4:1b:74"; }
+  ];
+in {
   adaptive_lighting = {
     max_brightness = 80;
     min_brightness = 20;
@@ -61,6 +71,24 @@
 
   prometheus = { };
   scene = "!include scenes.yaml";
+
+  sensor = [
+    {
+      platform = "sql";
+      db_url = "sqlite:///var/lib/hass/zigbee.db";
+      scan_interval = 30;
+      queries =
+        let
+          go = t: {
+            name = "heat_demand_${t.suffix}";
+            query = "SELECT value FROM attributes_cache_v7 where ieee = '${t.ieee}' and cluster = 513 and attrid = 8";
+            column = "value";
+            unit_of_measurement = "%";
+          };
+        in map go thermostats;
+    }
+  ];
+
   tasmota = { };
 
   zha = {

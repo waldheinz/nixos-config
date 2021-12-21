@@ -9,6 +9,7 @@
     ../../modules/zfs.nix
     ../../modules/zsh.nix
     ../../modules/home-assistant
+    ./backup.nix
     ./grafana.nix
     ./network.nix
     ./nginx.nix

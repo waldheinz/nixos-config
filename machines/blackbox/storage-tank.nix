@@ -42,6 +42,16 @@ in {
 
   environment.systemPackages = with pkgs; [ hdparm smartmontools ];
 
+  users.users.homepi-backup = {
+    description = "Backup Receiver for homepi";
+    isSystemUser = true;
+    group = "users";
+    shell = pkgs.bashInteractive;
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCR8Fw8ZjILr9M0THmV5ct1WRlDE5Y9a1EjyaQEjka1QeZgN8Gsze6la97fALvGQyuwP1Y1RZFKTpydjj5GBNXtxVI+AdtF5JcpIbag+WKso+X9cuVHapoeKM682zxaJ5wb8rYR8Lj3mo9qkIrf9gycPp16yQx+yXveK4dI/7yyXtzPvIoq9nGuLZJMLMcvBrQ5cMMjDAx/DNFINyKe8jbnMqL997CVP2MhqA2z1yzIHer09B18GBXUkUwdpDmaDj2579jTA0+oEIlW1audJZkVN+P/NGgnfISq2wp2bG0hMXKQrP2XGCaXw7BDI8+WQAG8BdeTK5XOs6zdwMoqEdD43nGgQKoxsXLXVUQuY8joCdPoWMnq1UjL7l7jkf1F5hywl2gC3ARsaCGPMNFKI8egVuoipJBCVSg3G2J4dGF3/vt8hlH/0XvvVj4703E6mEsGTldSkwPOc1dru4T9l3eX8j6nIcmVYbe0MXbZJZojJ/UoYLHNzb4nXr3De86R9E= root@homepi"
+    ];
+  };
+
   systemd = {
     services.zpool-tank-hdparm = {
       description = "Tune hdparm for zfs pool tank";

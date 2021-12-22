@@ -8,9 +8,17 @@ let
 	ha-with-extra = ha-no-test.override {
       extraPackages = ps: with ps; [
 				aiounifi
+        aiohomekit
+        async-upnp-client
+        brother
         colorlog
         hatasmota
+        plexapi
+        plexwebsocket
         PyChromecast
+        pyipp
+        soco
+        spotipy
         zeroconf
       ];
     };

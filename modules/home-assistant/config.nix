@@ -29,6 +29,8 @@ in {
 
   automation = "!include automations.yaml";
 
+  discovery = { };
+
   frontend = { };
 
   homeassistant = {
@@ -59,9 +61,13 @@ in {
     trusted_proxies = [ "127.0.0.1" "::1" ];
   };
 
+  ios = { };
+
   logger = {
     default = "info";
   };
+
+  mobile_app = { };
 
   mqtt = {
     broker = "blackbox.lan.waldheinz.de";

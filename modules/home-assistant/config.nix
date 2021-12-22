@@ -72,6 +72,44 @@ in {
   prometheus = { };
   scene = "!include scenes.yaml";
 
+  script = {
+    ext_temp_kitchen = {
+      mode = "single";
+
+      sequence = [
+        {
+          service = "zha.set_zigbee_cluster_attribute";
+          data = {
+            ieee = "84:fd:27:ff:fe:d4:31:e0";
+            endpoint_id = 1;
+            cluster_id = 513;
+            attribute = 16405;
+            cluster_type = "in";
+            value = "{{ (states(\"sensor.ewelink_th01_1d765424_temperature\") | float * 100) | round(0) }}";
+          };
+        }
+      ];
+    };
+
+    ext_temp_bedroom = {
+      mode = "single";
+
+      sequence = [
+        {
+          service = "zha.set_zigbee_cluster_attribute";
+          data = {
+            ieee = "84:fd:27:ff:fe:d4:33:5f";
+            endpoint_id = 1;
+            cluster_id = 513;
+            attribute = 16405;
+            cluster_type = "in";
+            value = "{{ (states(\"sensor.ewelink_th01_d1f45c24_temperature\") | float * 100) | round(0) }}";
+          };
+        }
+      ];
+    };
+  };
+
   sensor = [
     {
       platform = "sql";

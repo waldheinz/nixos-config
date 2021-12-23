@@ -136,6 +136,7 @@ in {
   tasmota = { };
 
   zha = {
+    custom_quirks_path = "${configDir}/custom_zha_quirks/";
     zigpy_config.ota = {
       ikea_provider = true;
       otau_directory = "${configDir}/zigpy_ota/";

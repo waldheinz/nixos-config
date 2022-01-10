@@ -12,6 +12,7 @@
     ./backup.nix
     ./grafana.nix
     ./network.nix
+    ./nfs-server.nix
     ./nginx.nix
     ./prometheus
     ./smb.nix
@@ -27,12 +28,12 @@
 
   fileSystems = {
     "/" = { fsType = "ext4"; device = "/dev/disk/by-label/NIXOS_SD"; };
-    "/mnt/incoming" = { fsType = "zfs"; device = "lacie/incoming"; };
-    "/mnt/time-machine" = { fsType = "zfs"; device = "lacie/time-machine"; };
-    "/var/lib/hass" = { fsType = "zfs"; device = "lacie/hass"; };
-    "/var/lib/prometheus2" = { fsType = "zfs"; device = "lacie/prometheus"; };
-    "/var/lib/syncthing" = { fsType = "zfs"; device = "lacie/syncthing"; };
-    "/var/lib/unifi/data" = { fsType = "zfs"; device = "lacie/unifi-data"; };
+    "/mnt/incoming" = { fsType = "zfs"; device = "homepi/incoming"; };
+    "/mnt/time-machine" = { fsType = "zfs"; device = "homepi/time-machine"; };
+    "/var/lib/hass" = { fsType = "zfs"; device = "homepi/hass"; };
+    "/var/lib/prometheus2" = { fsType = "zfs"; device = "homepi/prometheus"; };
+    "/var/lib/syncthing" = { fsType = "zfs"; device = "homepi/syncthing"; };
+    "/var/lib/unifi/data" = { fsType = "zfs"; device = "homepi/unifi-data"; };
   };
 
   networking.hostName = "homepi";

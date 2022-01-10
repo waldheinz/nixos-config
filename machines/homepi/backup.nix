@@ -5,7 +5,7 @@
     enable = true;
     host = "blackbox.lan.waldheinz.de";
     username = "homepi-backup";
-    localFilesystem = "lacie";
+    localFilesystem = "homepi";
     remoteFilesystem = "tank/homepi-backup";
     identityFilePath = "/etc/nixos/zfs-replicate-key";
   };

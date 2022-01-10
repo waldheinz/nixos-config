@@ -29,6 +29,7 @@
   fileSystems = {
     "/" = { fsType = "ext4"; device = "/dev/disk/by-label/NIXOS_SD"; };
     "/mnt/incoming" = { fsType = "zfs"; device = "homepi/incoming"; };
+    "/mnt/media" = { fsType = "zfs"; device = "homepi/media"; };
     "/mnt/time-machine" = { fsType = "zfs"; device = "homepi/time-machine"; };
     "/var/lib/hass" = { fsType = "zfs"; device = "homepi/hass"; };
     "/var/lib/prometheus2" = { fsType = "zfs"; device = "homepi/prometheus"; };

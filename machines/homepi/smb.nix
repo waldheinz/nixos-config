@@ -30,6 +30,12 @@
     '';
 
     shares = {
+      "Media" = {
+        "path" = "/mnt/media";
+        "valid users" = "trem";
+        "writeable" = "no";
+      };
+
       "Time Machine" = {
         "browseable" = "yes";
         "force user" = "trem";

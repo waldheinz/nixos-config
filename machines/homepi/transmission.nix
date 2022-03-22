@@ -14,9 +14,4 @@
       rpc-host-whitelist = "homepi.lan.waldheinz.de";
     };
   };
-
-  users.groups.torrents = {
-    gid = 1000;
-  };
-
 }

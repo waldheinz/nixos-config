@@ -4,7 +4,7 @@
   environment.systemPackages = [ pkgs.razergenie ];
 
   hardware.openrazer = {
-    enable = true;
+    # enable = true;
     devicesOffOnScreensaver = false;
   };
 }

@@ -22,7 +22,7 @@
     tigervnc
     vlc
     wine
-    youtubeDL
+    youtube-dl
   ];
 
   sound.enable = true;

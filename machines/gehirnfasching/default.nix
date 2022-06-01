@@ -30,4 +30,19 @@
     networking.hostId = "e45f2a2c";
 
     system.stateVersion = "19.03";
+
+    fileSystems."/mnt/hp/media" = {
+        device = "homepi.lan.waldheinz.de:/mnt/media";
+        fsType = "nfs";
+    };
+
+    fileSystems."/mnt/hp/incoming" = {
+        device = "homepi.lan.waldheinz.de:/mnt/incoming";
+        fsType = "nfs";
+    };
+
+    fileSystems."/mnt/hp/home/trem" = {
+        device = "homepi.lan.waldheinz.de:/home/trem";
+        fsType = "nfs";
+    };
 }

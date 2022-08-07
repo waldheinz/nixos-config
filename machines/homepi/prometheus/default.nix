@@ -16,6 +16,17 @@
 
     scrapeConfigs = [
       {
+        job_name = "mdi";
+        metrics_path = "/metrics-mdi";
+        static_configs = [ { targets = [ "decoder-3531b17c.local" ]; } { targets = [ "master-97726c0c.local" ]; } ];
+      }
+
+      {
+        job_name = "mdi-node";
+        static_configs = [ { targets = [ "decoder-3531b17c.local" ]; } { targets = [ "master-97726c0c.local" ]; } ];
+      }
+
+      {
         job_name = "node";
         static_configs = [
           { targets = [ "localhost:9100" ]; labels = { instance = "${config.networking.hostName}"; }; }

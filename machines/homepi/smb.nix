@@ -3,6 +3,7 @@
 {
   services.avahi = {
     enable = true;
+    ipv6 = false;
     openFirewall = true;
     publish = {
       enable = true;
@@ -34,6 +35,11 @@
         "path" = "/mnt/media";
         "valid users" = "trem";
         "writeable" = "no";
+      };
+   
+      "Incoming" = {
+        "path" = "/mnt/incoming";
+        "valid users" = "trem";
       };
 
       "Time Machine" = {

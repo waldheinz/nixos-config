@@ -38,4 +38,5 @@
   };
 
   networking.hostName = "homepi";
+  system.stateVersion = "22.05";
 }

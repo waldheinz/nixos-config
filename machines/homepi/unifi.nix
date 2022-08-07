@@ -5,7 +5,7 @@
 
   services.unifi = {
     enable = true;
-    openPorts = true;
+    openFirewall = true;
   };
 
   services.prometheus.exporters.unifi = {

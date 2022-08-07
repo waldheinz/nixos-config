@@ -11,17 +11,6 @@ let
     { suffix = "workroom"; ieee = "84:fd:27:ff:fe:d4:1b:74"; }
   ];
 in {
-  adaptive_lighting = {
-    max_brightness = 80;
-    min_brightness = 20;
-    lights = [
-      "light.flur_hinten"
-      "light.flur_oben"
-      "light.flur_vorn"
-      "light.treppe"
-    ];
-  };
-
   # SetOption105 1
   # RGBWWTable 255,255,255,255,255
   # RGBWWTable 255,255,255,190,0
@@ -46,11 +35,8 @@ in {
 
   homekit = {
     filter = { include_domains = [
-      "automation"
-      "binary_sensor"
       "climate"
       "light"
-      "scene"
       "sensor"
       "switch"
     ]; };
@@ -65,6 +51,12 @@ in {
 
   logger = {
     default = "info";
+    # logs = {
+    #   zigpy = "debug";
+    #   "homeassistant.components.zha" = "debug";
+    #   "zigpy_deconz.zigbee.application" = "debug";
+    #   "zigpy_deconz.api" = "debug";
+    # };
   };
 
   mobile_app = { };

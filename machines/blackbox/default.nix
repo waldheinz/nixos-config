@@ -12,7 +12,6 @@
         ../../modules/zsh.nix
         ./hardware-configuration.nix
         ./minecraft.nix
-        ./mosquitto.nix
         ./printing.nix
         ./smb.nix
         ./storage-tank.nix

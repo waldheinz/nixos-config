@@ -11,6 +11,7 @@
     ../../modules/home-assistant
     ./backup.nix
     ./grafana.nix
+    ./mosquitto.nix
     ./network.nix
     ./nfs-server.nix
     ./nginx.nix

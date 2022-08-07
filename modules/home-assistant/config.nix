@@ -62,7 +62,7 @@ in {
   mobile_app = { };
 
   mqtt = {
-    broker = "blackbox.lan.waldheinz.de";
+    broker = "homepi.lan.waldheinz.de";
   };
 
   my = { };

@@ -3,7 +3,6 @@
 {
     imports = [
         ../../modules/basics.nix
-        ../../modules/homebridge.nix
         ../../modules/i18n.nix
         ../../modules/monitoring.nix
         ../../modules/networking.nix
@@ -17,7 +16,6 @@
         ./printing.nix
         ./smb.nix
         ./storage-tank.nix
-        ./typo3.nix
     ];
 
     environment.systemPackages = with pkgs; [

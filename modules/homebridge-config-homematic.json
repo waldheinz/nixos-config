@@ -1,9 +1,0 @@
-{
-    "filter_device":[],
-    "filter_channel":[ ],
-    "outlets":[ ],
-    "doors":[],
-    "programs":[],
-    "subsection": "HomeKit",
-    "local_port": 38080
-}

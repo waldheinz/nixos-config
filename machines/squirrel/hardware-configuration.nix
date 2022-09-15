@@ -35,14 +35,4 @@
     cpu.amd.updateMicrocode = true;
     video.hidpi.enable = lib.mkDefault true;  # high-resolution display
   };
-
-  services.xserver = {
-    deviceSection = ''
-      BusID "PCI:7:0:0"
-    '';
-
-    serverFlagsSection = ''
-      Option "AutoAddGPU" "false"
-    '';
-  };
 }

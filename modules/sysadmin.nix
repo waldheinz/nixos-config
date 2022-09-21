@@ -23,6 +23,7 @@ in {
   environment.systemPackages = with pkgs; [
     binutils
     file
+    gparted
     iftop
     iotop
     lsof
@@ -33,6 +34,7 @@ in {
     openssl
     pciutils
     psmisc
+    pv
     sshfs-fuse
     tcpdump
     unrar

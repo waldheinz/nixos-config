@@ -45,4 +45,9 @@
         device = "homepi.lan.waldheinz.de:/home/trem";
         fsType = "nfs";
     };
+
+    fileSystems."/mnt/media" = {
+        device = "storinator.lan.waldheinz.de:/volume1/media";
+        fsType = "nfs";
+    };
 }

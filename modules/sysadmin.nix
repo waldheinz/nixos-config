@@ -37,6 +37,7 @@ in {
     pv
     sshfs-fuse
     tcpdump
+    tmux
     unrar
     unzip
     wget

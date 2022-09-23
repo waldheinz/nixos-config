@@ -15,9 +15,10 @@ let
 in {
   networking.hosts = {
     "fd17:e59:91e6::1" = [ "klaus.lan.waldheinz.de" ];
+    "fd17:e59:91e6:0:1a31:bfff:fe69:b7ff" = [ "gehirnfasching.lan.waldheinz.de" ];
+    "fd17:e59:91e6:0:9209:d0ff:fe15:d569" = [ "storinator.lan.waldheinz.de" ];
     "fd17:e59:91e6:0:e65f:1ff:fe4c:9961" = [ "hass.lan.waldheinz.de" "homepi.lan.waldheinz.de" ];
     "fd17:e59:91e6:0:ece5:11ff:fe66:a953" = [ "blackbox.lan.waldheinz.de" ];
-    "fd17:e59:91e6:0:9209:d0ff:fe15:d569" = [ "storinator.lan.waldheinz.de" ];
   };
 
   services.cachefilesd.enable = true;

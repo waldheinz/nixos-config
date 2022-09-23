@@ -22,14 +22,14 @@ in {
 
   services.cachefilesd.enable = true;
 
-  fileSystems."/mnt/homepi/media" = {
-    device = "homepi.lan.waldheinz.de:/mnt/media";
+  fileSystems."/mnt/storinator/incoming" = {
+    device = "storinator.lan.waldheinz.de:/volume1/incoming";
     fsType = "nfs";
     options = nfsOpts;
   };
 
-  fileSystems."/mnt/homepi/incoming" = {
-    device = "homepi.lan.waldheinz.de:/mnt/incoming";
+  fileSystems."/mnt/storinator/media" = {
+    device = "storinator.lan.waldheinz.de:/volume1/media";
     fsType = "nfs";
     options = nfsOpts;
   };

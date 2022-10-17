@@ -10,6 +10,7 @@
     ../../modules/i18n.nix
     ../../modules/like-home.nix
     ../../modules/razer.nix
+    ../../modules/scripts
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
     ../../modules/users.nix

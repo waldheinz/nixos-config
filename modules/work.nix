@@ -75,8 +75,8 @@ in {
     weston
   ];
 
-  nix = {
-    binaryCachePublicKeys = [ "nix-cache.lan.meetwise.de:VJS4V7/IkUclm1cBVo/jyZ1Pu0ADBraMU/1dPDrDAhY=" ];
-    binaryCaches = [ "http://nix-cache.lan.meetwise.de" ];
+  nix.settings = {
+    trusted-public-keys = [ "nix-cache.lan.meetwise.de:VJS4V7/IkUclm1cBVo/jyZ1Pu0ADBraMU/1dPDrDAhY=" ];
+    substituters = [ "http://nix-cache.lan.meetwise.de" ];
   };
 }

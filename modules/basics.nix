@@ -18,7 +18,7 @@
       experimental-features = nix-command flakes
     '';
 
-    trustedUsers = [ "root" "@wheel" ];
+    settings.trusted-users = [ "root" "@wheel" ];
 
     gc = {
       automatic = true;

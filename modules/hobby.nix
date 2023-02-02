@@ -2,11 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    minecraft
-    prusa-slicer
-    transmission-remote-gtk
-    handbrake
     esptool
     freecad
+    handbrake
+    minecraft
+    openscad
+    prusa-slicer
+    transmission-remote-gtk
+    gimp
   ];
 }

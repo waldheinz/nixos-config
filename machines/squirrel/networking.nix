@@ -13,8 +13,10 @@
         privateKeyFile = "/etc/waldnet-priv.key";
         peers = [ {
           allowedIPs = [ "fd17:0e59:91e6::/48" ];
+          endpoint = "waldnet.chickenkiller.com:53914";
           persistentKeepalive = 25;
-          endpoint = "waldnet.chickenkiller.com:53914"; publicKey = "CDRtNHufsnS1nHt+wxILtmsYusZKokLgvjnyQuxj0zE="; } ];
+          publicKey = "CDRtNHufsnS1nHt+wxILtmsYusZKokLgvjnyQuxj0zE=";
+        } ];
       };
     };
   };

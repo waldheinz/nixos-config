@@ -35,6 +35,9 @@
 
   networking.hostName = "squirrel"; # Define your hostname.
   networking.hostId = "33f63802";
-
+  nix.settings = {
+    max-jobs = 4;
+    cores = 4;
+  };
   system.stateVersion = "19.03";
 }

@@ -48,4 +48,6 @@ in {
   programs.wireshark = {
     enable = true;
   };
+
+  services.locate.enable = true;
 }

@@ -31,6 +31,7 @@ in {
     mc
     mtr
     my-nvim
+    nmap
     openssl
     pciutils
     psmisc

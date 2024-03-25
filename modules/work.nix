@@ -59,20 +59,23 @@ let
 in {
   environment.systemPackages = with pkgs; [
     cargo
+    rustc
     gdb
     git
+    inkscape
     git-lfs
     haskellPackages.stylish-haskell
     jq
     # my-vscode
     vscode-fhs
     nodePackages.typescript
-    python3Packages.pycodestyle
-    python3Packages.python
+    # python3Packages.pycodestyle
+    # python3Packages.python
     shellcheck
     sqlitebrowser
     stack
     weston
+    nodejs
   ];
 
   nix.settings = {

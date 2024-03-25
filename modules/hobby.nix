@@ -5,7 +5,7 @@
     esptool
     freecad
     handbrake
-    minecraft
+    # minecraft
     openscad
     prusa-slicer
     transmission-remote-gtk

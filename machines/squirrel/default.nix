@@ -8,7 +8,7 @@
     ../../modules/fonts.nix
     ../../modules/hobby.nix
     ../../modules/i18n.nix
-    ../../modules/like-home.nix
+    # ../../modules/like-home.nix
     ../../modules/razer.nix
     ../../modules/syncthing.nix
     ../../modules/sysadmin.nix
@@ -36,8 +36,24 @@
   networking.hostName = "squirrel"; # Define your hostname.
   networking.hostId = "33f63802";
   nix.settings = {
-    max-jobs = 4;
-    cores = 6;
+    max-jobs = 3;
+    cores = 8;
   };
+
+#   nix.distributedBuilds = false;
+#   nix.buildMachines = [
+#     {
+#         hostName = "fox.lan.meetwise.de";
+#         sshUser = "trem";
+#         system = "x86_64-linux";
+#         maxJobs = 6;
+#         speedFactor = 3;
+#         publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUZIOXNLeU0rVEhudHB2aWhJclRBeHQvMnBISW9NaGF5VUtMMythTzFHWmUgcm9vdEBuaXhvcwo=";
+#         supportedFeatures = [
+#             "kvm" "nixos-test"
+#             "big-parallel" "benchmark"
+#         ];
+    # }
+#   ];
   system.stateVersion = "19.03";
 }

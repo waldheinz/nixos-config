@@ -22,6 +22,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     binutils
+    btop
     file
     gparted
     iftop

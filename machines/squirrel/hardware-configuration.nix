@@ -31,8 +31,17 @@
   swapDevices = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  services.xserver = {
+    deviceSection = ''
+        BusID "PCI:7:0:0"
+    '';
+
+    serverFlagsSection = ''
+        Option "AutoAddGPU" "false"
+    '';
+  };
+
   hardware = {
     cpu.amd.updateMicrocode = true;
-    video.hidpi.enable = lib.mkDefault true;  # high-resolution display
   };
 }

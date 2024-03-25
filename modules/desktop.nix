@@ -1,7 +1,14 @@
 { config, pkgs, ... }:
 
-{
+let
+  my-python-packages = ps: with ps; [
+    imageio
+    numpy
+    scipy
+  ];
+in {
   environment.systemPackages = with pkgs; [
+    (python3.withPackages my-python-packages)
     breeze-gtk
     chromium
     ddrescue
@@ -10,19 +17,22 @@
     filelight
     firefox
     geeqie
+    gimp
     gwenview
     hexchat
     kate
     kde-gtk-config
-    keepassx2
+    keepassxc
+    kmscube
     mpv
     nix-tree
     okular
     qmmp
     tigervnc
     vlc
+    vulkan-tools
     wine
-    youtube-dl
+    yt-dlp
   ];
 
   sound.enable = true;

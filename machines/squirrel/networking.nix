@@ -9,15 +9,19 @@
     wireguard = {
       enable = true;
       interfaces.wg_wld = {
-        ips = [ "fd17:0e59:91e6:1::3/64" ];
+        ips = [ "192.168.10.3/32" ];
         privateKeyFile = "/etc/waldnet-priv.key";
         peers = [ {
-          allowedIPs = [ "fd17:0e59:91e6::/48" ];
-          endpoint = "waldnet.chickenkiller.com:53914";
-          persistentKeepalive = 25;
-          publicKey = "CDRtNHufsnS1nHt+wxILtmsYusZKokLgvjnyQuxj0zE=";
+          allowedIPs = [ "192.168.10.0/24" "192.168.1.0/24" ];
+          endpoint = "waldnet.chickenkiller.com:51820";
+          persistentKeepalive = 30;
+          publicKey = "3ISKmcW5yJ3MqF3ZJ5xoYW2wKchN2dKqkC5DFLZRXlE=";
         } ];
       };
+    };
+
+    hosts = {
+        "192.168.1.12" = [ "storinator.lan.waldheinz.de" ];
     };
   };
 

@@ -7,7 +7,7 @@
     useNetworkd = true;
 
     wireguard = {
-      enable = true;
+      enable = false;
       interfaces.wg_wld = {
         ips = [ "192.168.10.3/32" ];
         privateKeyFile = "/etc/waldnet-priv.key";

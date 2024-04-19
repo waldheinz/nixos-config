@@ -14,12 +14,13 @@
     ../../modules/sysadmin.nix
     ../../modules/users.nix
     ../../modules/work.nix
+    ../../modules/video-server/default.nix
     ../../modules/x11.nix
     ../../modules/zsh.nix
     ./hardware-configuration.nix
     ./networking.nix
     ./node-exporter.nix
-    ./send-streams.nix
+    # ./send-streams.nix
   ];
 
   environment.systemPackages = with pkgs; [

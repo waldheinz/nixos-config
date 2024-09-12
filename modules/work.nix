@@ -71,7 +71,9 @@ in {
     nodePackages.typescript
     # python3Packages.pycodestyle
     # python3Packages.python
+    rustup
     shellcheck
+    socat
     sqlitebrowser
     stack
     weston

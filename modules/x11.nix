@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver = {
-    enable = true;
-    layout = "de";
+  services = {
+    xserver = {
+        enable = true;
+        xkb.layout = "de";
+        desktopManager = {
+            plasma5.enable = true;
+        };
+    };
 
     displayManager.sddm = {
       enable = true;
     };
-
-    desktopManager = {
-      plasma5.enable = true;
-    };
-
   };
 }
